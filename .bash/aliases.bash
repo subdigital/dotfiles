@@ -1,16 +1,23 @@
 alias ..="cd .."
-alias reload="source ~/Dropbox/dotfiles/bash/aliases.sh"
-alias ea='$EDITOR ~/Dropbox/dotfiles/bash/aliases.sh && reload'
-alias vim='mvim -v'
-alias ds='du -h -d 1'
-alias ll='ls -l'
 
+# quick edit aliases
+alias reload="source ~/.bash/aliases.sh"
+alias ea='$EDITOR ~/.bash/aliases.sh && reload'
+
+# use terminal mvim
+alias vim='mvim -v'
+
+# See disk usage in the current folder only
+alias ds='du -h -d 1'
+
+alias ll='ls -l'
+alias cpwd='pwd | pbcopy' #copy working directory
+alias cpdir=cpwd
 
 #terminal
 function title() {
   echo -n -e "\033]0;$1\007"
 }
-
 
 #Finder
 alias o='open . &'
@@ -30,11 +37,13 @@ alias sp='script/plugin'
 # CocoaPods
 alias pod-dev=$HOME/projects/CocoaPods/bin/pod
 
+# bundler
 alias bec='bundle exec cucumber'
 function be() {
   bundle exec $*
 }
 
+# zeus
 alias zs='zeus start'
 function z() {
   if [[ $# -eq 0 ]]
@@ -44,10 +53,6 @@ function z() {
     zeus $*
   fi
 }
-
-alias cpwd='pwd | pbcopy' #copy working directory
-alias cpdir=cpwd
-
 
 #Heroku
 function hrmig() {
