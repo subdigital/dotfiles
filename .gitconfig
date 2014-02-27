@@ -51,4 +51,4 @@
 	prompt = false
 
 [push]
-	default = simple
+	default = tracking
