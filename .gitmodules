@@ -82,3 +82,6 @@
 [submodule ".vim/bundle/ack.vim"]
 	path = .vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim
+[submodule ".vim/bundle/vim-markdown"]
+	path = .vim/bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown
