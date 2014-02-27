@@ -78,6 +78,13 @@ function presentation_prompt {
   clear
 }
 
+ssh_load_autocomplete()
+{
+  complete -W "$(awk '/^\s*Host\s*/ { sub(/^\s*Host /, ""); print; }' ~/.ssh/config)" ssh
+}
+
+ssh_load_autocomplete
+
 # Git completion for bash
 git_completion=~/.bash/git-completion.bash
 [ -f $git_completion ] && source $git_completion
