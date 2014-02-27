@@ -18,6 +18,7 @@
 [alias]
 	datetag = !git tag -a `date \"+%Y%m%d%H%M\"` -m tagged
 	ctags = !.git/hooks/ctags
+  lsd = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
