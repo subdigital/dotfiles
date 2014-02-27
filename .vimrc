@@ -139,13 +139,24 @@ set scrolloff=5
 
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,coverage/**,spec/reports/**,log/**,public/images*
-" let g:ctrlp_custom_ignore ='tmp\|.DS_Store\|.git\|coverage\|spec/reports\|log\|public\/images'
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  'log$\|tmp$\|\.sass-cache$\|\.git$\|\.hg$\|\.svn$\|vendor$',
-    \ 'file': '\.DS_STORE$\|tags',
+    \ 'dir':  'public$\|log$\|tmp$\|\.sass-cache$\|\.git$\|\.hg$\|\.svn$\|vendor$',
+    \ 'file': '\.DS_STORE$\|tags\|*.png\|*.jpg\|*.gif',
     \ 'link': '',
     \ }
-let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_clear_cache_on_exit=1
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Faster and respects gitignore.
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching=0
+endif
+
+
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Test-running stuff
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
