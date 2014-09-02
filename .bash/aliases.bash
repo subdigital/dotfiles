@@ -1,8 +1,21 @@
 alias ..="cd .."
 
 # quick edit aliases
-alias reload="source ~/.bash/aliases.sh"
-alias ea='$EDITOR ~/.bash/aliases.sh && reload'
+alias reload="source ~/.bash/aliases.bash"
+alias ea='$EDITOR ~/.bash/aliases.bash && reload'
+
+function resque_workers() {
+  if [ -z "$1" ]
+  then
+    echo "Enter the number of workers you want to run."
+    return
+  fi
+
+  bundle exec rake QUEUE=* COUNT=$1 resque:workers
+}
+
+alias workers='resque_workers'
+alias worker='resque_workers 1'
 
 # use terminal mvim
 alias vim='mvim -v'
@@ -27,12 +40,10 @@ alias tu='top -o cpu' # processes sorted by CPU
 alias tm='top -o vsize' # processes sorted by Memory
 
 #Rails
-alias ss='script/server'
+alias rs='bundle exec rails server'
 alias r='rake'
-alias rmig='rake db:migrate'
-alias sg='script/generate'
-alias sc='script/console'
-alias sp='script/plugin'
+alias rmig='bundle exec rake db:migrate'
+alias rc='bundle exec rails console'
 
 # CocoaPods
 alias pod-dev=$HOME/projects/CocoaPods/bin/pod
