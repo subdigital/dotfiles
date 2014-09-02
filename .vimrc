@@ -5,7 +5,6 @@ runtime! macros/matchit.vim
 
 filetype plugin indent on
 set t_Co=256
-"color Tomorrow-Night
 color grb256
 
 let g:Powerline_symbols = 'fancy'
@@ -47,8 +46,6 @@ set incsearch
 set ignorecase
 set smartcase
 
-nmap <leader>V :tabe ~/.vimrc<cr>
-
 " reload vimrc when it changes
 autocmd! BufWritePost {.vimrc,.gvimrc} source %
 
@@ -62,6 +59,13 @@ au BufNewFile,BufRead *.json set ft=javascript
 " Set proper cursors for terminal vim in insert/normal mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Move entire lines up & down with ⌘ JK
+nmap <D-j> mz:m+<cr>`z
+nmap <D-k> mz:m-2<cr>`z
+vmap <D-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <D-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
 
 " Jump to last position unless it's invalid or in an event handler
 autocmd BufReadPost *
@@ -106,13 +110,20 @@ nmap <leader>V :tabe ~/.vimrc<cr>
 " map <leader>t :call RunCurrentTest()<cr>
 
 " vim-rspec
-let g:rspec_command = "silent !~/.vim/bundle/vim-rspec/bin/run_in_os_x_terminal 'bundle exec rspec {spec}'"
+"let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}"
+let g:rspec_command = "Dispatch rspec {spec}"
 map <leader>t :call RunCurrentSpecFile()<cr>
+map <leader>s :call RunNearestSpec()<cr>
+map <leader>l :call RunLastSpec()<cr>
 
 " Rails.vim shortcuts
 map <leader>gc :Rcontroller<CR>
 map <leader>gv :Rview<CR>
 map <leader>gm :Rmodel<CR>
+
+" Ruby 1.9 hash conversion
+nmap <Leader>h :s/\:\([a-zA-Z_]\+\)\s=>/\1\:/g<cr>
+vmap <Leader>h :'<,'>s/\:\([a-zA-Z_]\+\)\s=>/\1\:/g<cr>
 
 " vim tab navigation
 nnoremap th  :tabfirst<CR>
