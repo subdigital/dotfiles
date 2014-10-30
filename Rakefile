@@ -26,7 +26,7 @@ def create_symlinks
     homedir = File.expand_path ENV['HOME']
     source_path = File.join dir, file
     target_path = File.join homedir, file
-    unless already_symlinked(source_path, target_path)
+    unless already_symlinked?(source_path, target_path)
       if File.exists?(target_path)
         puts "File #{target_path} exists.  Overwrite it (y/n)?"
         if STDIN.gets.chomp.downcase == 'y'
