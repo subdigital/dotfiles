@@ -20,7 +20,7 @@ set list listchars=tab:\ \ ,trail:·
 set cursorline
 
 " 4 spaces for js files
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+" autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
 " allow hiding modified buffers
 set hidden
@@ -51,7 +51,7 @@ autocmd! BufWritePost {.vimrc,.gvimrc} source %
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru,Podfile,*.podspec,Guardfile,Capfile,*.cap,*.rabl,.kick}   set ft=ruby
-au BufRead,BufNewFile {.fdoc} set ft=yaml
+au BufRead,BufNewFile {*.fdoc} set ft=yaml
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript
