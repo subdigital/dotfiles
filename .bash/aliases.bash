@@ -17,6 +17,8 @@ function resque_workers() {
 alias workers='resque_workers'
 alias worker='resque_workers 1'
 
+alias whiskey='open $1 -a /Applications/Whiskey.app'
+
 # use terminal mvim
 alias vim='mvim -v'
 
@@ -106,3 +108,19 @@ function gg() {
 }
 
 alias gd='git diff'
+
+function xc() {
+  project_file=$(find -E . -maxdepth 2 -regex ".*\.(xcodeproj|xcworkspace)$" | \
+    grep -v "xcodeproj/project.xcworkspace" | \
+    grep -v Pods | \
+    sort -r | \
+    head -1)
+
+  if [ -z "$project_file" ]
+  then
+    echo "Couldn't find a workspace or a project to open."
+  else
+    echo "Opening $project_file..."
+    open $project_file
+  fi
+}

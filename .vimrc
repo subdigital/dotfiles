@@ -223,6 +223,23 @@ function! CorrectTestRunner()
   endif
 endfunction
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
+
+" tab in normal mode skips words
+nmap <tab> w
 
 " XMPFilter
 nmap <buffer> <F5> <Plug>(xmpfilter-run)
@@ -232,6 +249,5 @@ imap <buffer> <F5> <Plug>(xmpfilter-run)
 nmap <buffer> <F4> <Plug>(xmpfilter-mark)
 xmap <buffer> <F4> <Plug>(xmpfilter-mark)
 imap <buffer> <F4> <Plug>(xmpfilter-mark)
-
 
 

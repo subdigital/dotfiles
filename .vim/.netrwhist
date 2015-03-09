@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/ben/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/asset_sync-0.5.3'
+let g:netrw_dirhist_2='/Users/ben/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/bundler/gems/resque-retry-615d418f927d'
+let g:netrw_dirhist_3='/Users/ben/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/bootstrap-sass-3.1.1.0'
+let g:netrw_dirhist_4='/Users/ben/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/jbuilder-2.1.1'
+let g:netrw_dirhist_5='/Users/ben/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/tilt-jbuilder-0.6.1'
