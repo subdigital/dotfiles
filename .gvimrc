@@ -9,7 +9,7 @@
 " set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h14
 " set guifont=Inconsolata:h18
 " set guifont=M+\ 1m:h16
-set guifont=Anonymice\ Powerline:h16
+set guifont=Anonymice\ Powerline:h18
 
 set guioptions-=T  " No toolbar
 set guioptions-=L  " No scrollbars
@@ -19,8 +19,10 @@ set guioptions-=r
 " colorscheme grb256
 " colorscheme github
 " colorscheme Mustang_Vim_Colorscheme_by_hcalves 
-colorscheme hemisu
+" colorscheme hemisu
 " colorscheme Tomorrow-Night
+" colorscheme Tomorrow
+colorscheme jellybeans
 " set background=dark
 "
 

@@ -50,7 +50,7 @@ set smartcase
 autocmd! BufWritePost {.vimrc,.gvimrc} source %
 
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru,Podfile,*.podspec,Guardfile,Capfile,*.cap,*.rabl,.kick}   set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru,Podfile,*.podspec,Guardfile,Capfile,*.cap,*.rabl,.kick,Fastfile,Appfile,Snapfile,Deliverfile,Gymfile}   set ft=ruby
 au BufRead,BufNewFile {*.fdoc} set ft=yaml
 
 " add json syntax highlighting
@@ -78,6 +78,9 @@ autocmd BufReadPost *
 :nnoremap <C-J> <C-W>j
 :nnoremap <C-K> <C-W>k
 :nnoremap <C-L> <C-W>l
+
+" Change file to new hash syntax
+:nmap <D-H> :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<CR>
 
 :nnoremap <leader>n :NERDTreeToggle<CR>
 map <D-J> :NERDTreeFind<CR>
@@ -223,6 +226,7 @@ function! CorrectTestRunner()
   endif
 endfunction
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
@@ -250,4 +254,7 @@ nmap <buffer> <F4> <Plug>(xmpfilter-mark)
 xmap <buffer> <F4> <Plug>(xmpfilter-mark)
 imap <buffer> <F4> <Plug>(xmpfilter-mark)
 
+
+" copy current file path
+nmap cp :let @" = expand("%:p")<cr>:echo "File path copied to yank buffer"<cr>
 
