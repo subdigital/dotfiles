@@ -17,8 +17,6 @@ function resque_workers() {
 alias workers='resque_workers'
 alias worker='resque_workers 1'
 
-alias whiskey='open $1 -a /Applications/Whiskey.app'
-
 # use terminal mvim
 alias vim='mvim -v'
 
