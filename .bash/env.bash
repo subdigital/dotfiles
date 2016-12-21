@@ -5,7 +5,7 @@ export PATH=~/bin:~/.ec2/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/local/sbi
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 
 export EC2_HOME=~/.ec2
-export JAVA_HOME=`/usr/libexec/java_home` # http://stackoverflow.com/questions/6588390/where-is-java-home-on-osx-yosemite-10-10-mavericks-10-9-mountain-lion-10
+# export JAVA_HOME=`/usr/libexec/java_home` # http://stackoverflow.com/questions/6588390/where-is-java-home-on-osx-yosemite-10-10-mavericks-10-9-mountain-lion-10
 
 
 # Load secrets into ENV if present
@@ -14,3 +14,4 @@ secrets_path=~/.bash/secrets.bash
 
 docker_vars_path=~/.dockerrc
 [ -f $docker_vars_path ] && source $docker_vars_path
+
