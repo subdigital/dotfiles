@@ -90,6 +90,9 @@ alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gl='git log --oneline'
 
+# Pretty-printing
+alias format_json='python -m json.tool'
+
 #create a new branch & switch to it
 function gcb() {
   git checkout -b $*
