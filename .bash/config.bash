@@ -80,7 +80,10 @@ function presentation_prompt {
 
 ssh_load_autocomplete()
 {
-  complete -W "$(awk '/^\s*Host\s*/ { sub(/^\s*Host /, ""); print; }' ~/.ssh/config)" ssh
+  if [[ -d ~/.ssh/config ]]
+  then
+    complete -W "$(awk '/^\s*Host\s*/ { sub(/^\s*Host /, ""); print; }' ~/.ssh/config)" ssh
+  fi
 }
 
 ssh_load_autocomplete
