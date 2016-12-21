@@ -5,7 +5,7 @@ function __git_branch {
 
 function __git_dirty {
   if [[ -d .git ]]; then
-    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo " •"
+    [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]] && echo " •"
   fi
 }
 
@@ -68,7 +68,7 @@ function bash_prompt {
   local UC=$W                 # user's color
   [ $UID -eq "0" ] && UC=$R   # root's color
 
-  PS1="$B$Y $EMG\w$EMC \$(__minutes_since_last_commit_with_branch)$EMR\$(__git_dirty)${NONE} $ "
+  PS1="$EMG\w$EMC \$(__minutes_since_last_commit_with_branch)$EMR\$(__git_dirty)${NONE} $ "
 }
 bash_prompt
 
