@@ -113,3 +113,18 @@ EOF
     open "$project_file" -a /Applications/Xcode.app
   fi
 }
+
+# starts an HTTP server on port 8000
+alias pserve='python -m SimpleHTTPServer 8000'
+
+tab-color() {
+    echo -ne "\033]6;1;bg;red;brightness;$1\a"
+    echo -ne "\033]6;1;bg;green;brightness;$2\a"
+    echo -ne "\033]6;1;bg;blue;brightness;$3\a"
+}
+
+tab-reset() {
+    echo -ne "\033]6;1;bg;*;default\a"
+}
+
+
