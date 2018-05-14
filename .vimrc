@@ -17,7 +17,12 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set list listchars=tab:\ \ ,trail:·
-set cursorline
+
+" I love this setting but it causes huge scrolling performance slowdowns with
+" syntax highlighting on large files.
+" set cursorline
+
+set mouse=a
 
 " 4 spaces for js files
 " autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
@@ -27,6 +32,10 @@ set hidden
 
 " No audible bell
 set vb
+
+" No flashing window
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 set number
 set ruler
