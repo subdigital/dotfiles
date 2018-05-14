@@ -87,11 +87,18 @@ function gg() {
 alias gd='git diff'
 
 function xc() {
-  project_file=$(find -E . -maxdepth 2 -regex ".*\.(xcodeproj|xcworkspace)$" | \
-    grep -v "xcodeproj/project.xcworkspace" | \
-    grep -v Pods | \
-    sort -r | \
-    head -1)
+  project_file=$(cat <<EOF | ruby -rfileutils
+
+  files = Dir.glob('**/*.{xcworkspace,xcodeproj}')
+    .reject {|p|
+      p.include?('Pods') ||
+      p.include?('xcodeproj/project.xcworkspace') }
+    .map {|x| [x, x.scan(/\//).count]}
+    .sort {|a, b| a.last <=> b.last || a.first <=> b.first }
+    .map {|x| x.first }
+  puts files.first
+EOF
+)
 
   if [ -z "$project_file" ]
   then
