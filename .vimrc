@@ -75,6 +75,13 @@ nmap <D-k> mz:m-2<cr>`z
 vmap <D-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <D-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
+" Bubble single lines (uses unimpaired.vim)
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
 
 " Jump to last position unless it's invalid or in an event handler
 autocmd BufReadPost *
