@@ -8,3 +8,5 @@ export PATH=/Library/Developer/Toolchains/swift-latest.xctoolchain/usr/bin:"${PA
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+
+export PATH="$HOME/.yarn/bin:$PATH"
