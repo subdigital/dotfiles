@@ -32,6 +32,7 @@
 
 [core]
 	excludesfile = /Users/ben/.gitignore_global
+	editor = vim
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
