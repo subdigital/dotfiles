@@ -93,6 +93,10 @@ autocmd BufReadPost *
 
 :nnoremap <leader>n :NERDTreeToggle<CR>
 map <D-J> :NERDTreeFind<CR>
+map gj :NERDTreeFind<CR>
+let NERDTreeMinimalUI = 1
+let NERDTreeQuitOnOpen = 1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 set nowrap
 
@@ -266,4 +270,5 @@ imap <buffer> <F4> <Plug>(xmpfilter-mark)
 
 " copy current file path
 nmap cp :let @" = expand("%:p")<cr>:echo "File path copied to yank buffer"<cr>
+
 
