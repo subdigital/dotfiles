@@ -7,5 +7,6 @@ PATH=/usr/local/bin:/usr/local/heroku/bin:$PATH:/usr/local/sbin
 PATH=$PATH:bin:/Applications/Postgres.app/Contents/Versions/9.6/bin
 
 source ~/.bashrc
+[[ -f ~/.iterm2_shell_integration.bash ]] && source ~/.iterm2_shell_integration.bash
 
 export PATH
