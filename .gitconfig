@@ -53,7 +53,7 @@
 	prompt = false
 
 [push]
-	default = tracking
+	default = current
 [filter "media"]
 	required = true
 	clean = git media clean %f
