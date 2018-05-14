@@ -16,3 +16,7 @@ xcuserdata
 *.moved-aside
 DerivedData
 *.xcuserstate
+.byebug_history
+
+*.orig
+tags
