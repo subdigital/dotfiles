@@ -110,6 +110,6 @@ EOF
     echo "Couldn't find a workspace or a project to open."
   else
     echo "Opening $project_file..."
-    open $project_file -a /Applications/Xcode.app
+    open "$project_file" -a /Applications/Xcode.app
   fi
 }
