@@ -2,20 +2,7 @@ alias ..="cd .."
 
 # quick edit aliases
 alias reload="source ~/.bash/aliases.bash"
-alias ea='$EDITOR ~/.bash/aliases.bash && reload'
-
-function resque_workers() {
-  if [ -z "$1" ]
-  then
-    echo "Enter the number of workers you want to run."
-    return
-  fi
-
-  bundle exec rake QUEUE=* COUNT=$1 resque:workers
-}
-
-alias workers='resque_workers'
-alias worker='resque_workers 1'
+alias ea='vim ~/.bash/aliases.bash && reload'
 
 # use terminal mvim
 alias vim='mvim -v'
@@ -52,17 +39,6 @@ alias pod-dev=$HOME/projects/CocoaPods/bin/pod
 alias bec='bundle exec cucumber'
 function be() {
   bundle exec $*
-}
-
-# zeus
-alias zs='zeus start'
-function z() {
-  if [[ $# -eq 0 ]]
-  then
-    zeus start
-  else
-    zeus $*
-  fi
 }
 
 #Heroku
