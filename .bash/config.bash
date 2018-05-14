@@ -68,7 +68,7 @@ function bash_prompt {
   local UC=$W                 # user's color
   [ $UID -eq "0" ] && UC=$R   # root's color
 
-  PS1="$EMG\w$EMC \$(__minutes_since_last_commit_with_branch)$EMR\$(__git_dirty)${NONE} $ "
+  PS1="$K\h $EMG\w$EMC \$(__minutes_since_last_commit_with_branch)$EMR\$(__git_dirty)${NONE} $ "
 }
 bash_prompt
 
