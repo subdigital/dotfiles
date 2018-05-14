@@ -84,6 +84,11 @@ function gg() {
   git commit -v -a -m "$*"
 }
 
+# fetch gitignore templates from gitignore.io
+function gi() {
+  curl https://www.gitignore.io/api/$*
+}
+
 alias gd='git diff'
 
 function xc() {
