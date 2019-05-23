@@ -91,26 +91,34 @@ function gi() {
 
 alias gd='git diff'
 
-function xc() {
-  project_file=$(cat <<EOF | ruby -rfileutils
+function xcbeta() {
+  xc /Applications/Xcode-beta.app
+}
 
+function find_xcode_projects() {
+  cat <<EOF | ruby -rfileutils
   files = Dir.glob('**/*.{xcworkspace,xcodeproj}')
     .reject {|p|
       p.include?('Pods') ||
       p.include?('xcodeproj/project.xcworkspace') }
-    .map {|x| [x, x.scan(/\//).count]}
-    .sort {|a, b| a.last <=> b.last || a.first <=> b.first }
-    .map {|x| x.first }
-  puts files.first
+    .map {|x| { path: x, depth: x.scan(/\//).count, workspace: x.include?('xcworkspace')} }
+    .sort_by {|a| [a[:depth], a[:workspace] ? 0 : 1] }
+    .map {|x| x[:path] }
+  puts files
 EOF
-)
+}
+
+
+function xc() {
+  xcode=${1:-/Applications/Xcode.app}
+  project_file=$(find_xcode_projects | head -n1)
 
   if [ -z "$project_file" ]
   then
     echo "Couldn't find a workspace or a project to open."
   else
     echo "Opening $project_file..."
-    open "$project_file" -a /Applications/Xcode.app
+    open "$project_file" -a $xcode
   fi
 }
 
