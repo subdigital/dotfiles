@@ -1,12 +1,8 @@
 export EDITOR="atom"
 export TERM=xterm
 export CLICOLOR=1
-export PATH=~/bin:~/.ec2/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/local/sbin:$PATH
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
-
-export EC2_HOME=~/.ec2
-# export JAVA_HOME=`/usr/libexec/java_home` # http://stackoverflow.com/questions/6588390/where-is-java-home-on-osx-yosemite-10-10-mavericks-10-9-mountain-lion-10
-
+export PATH=~/bin:/usr/local/bin:/usr/local/heroku/bin:/usr/local/sbin:$PATH
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin
 
 # Load secrets into ENV if present
 secrets_path=~/.bash/secrets.bash
