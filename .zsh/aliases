@@ -1,0 +1,14 @@
+
+# Starts an HTTP Server on port 8000
+alias server="open -a /Applications/Safari.app http://localhost:8000 && python -m SimpleHTTPServer 8000"
+
+# Copy working directory to the pasteboard
+alias cpdir="pwd | pbcopy"
+
+# See disk usage in the current folder only
+alias ds="du -h -d 1"
+
+# Pretty print json (pipe some output into this alias)
+alias format_json="python -m json.tool"
+
+alias reload="source ~/.zshrc"

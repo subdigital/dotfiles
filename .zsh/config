@@ -1,0 +1,3 @@
+EDITOR='atom'
+TERM='xterm'
+PATH=~/bin:$PATH
