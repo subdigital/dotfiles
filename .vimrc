@@ -24,8 +24,9 @@ set list listchars=tab:\ \ ,trail:·
 
 set mouse=a
 
-" 4 spaces for js files
-" autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+" 4 space indent for somes file types
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype swift setlocal ts=4 sts=4 sw=4
 
 " allow hiding modified buffers
 set hidden
