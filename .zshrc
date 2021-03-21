@@ -79,9 +79,9 @@ eval "$(rbenv init -)"
 fpath+=~/.zsh/functions
 
 autoload ruby-helpers && ruby-helpers
-
 autoload xcode-helpers && xcode-helpers
 autoload git-helpers && git-helpers
+autoload pg-helpers && pg-helpers
 autoload colors && colors
 
 source ~/.zsh/aliases
@@ -95,9 +95,3 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-pg_bin=/Applications/Postgres.app/Contents/Versions/latest/bin
-if [ -d $pg_bin ];
-then
-  PATH=$pg_bin:$PATH
-fi
