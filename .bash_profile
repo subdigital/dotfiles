@@ -10,3 +10,6 @@ source ~/.bashrc
 [[ -f ~/.iterm2_shell_integration.bash ]] && source ~/.iterm2_shell_integration.bash
 
 export PATH
+
+export COMMAND_LINE_INSTALL="true"
+
