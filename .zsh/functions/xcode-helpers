@@ -17,8 +17,10 @@ function xc() {
   xcode=${1:-/Applications/Xcode.app}
   project_file=$(find_xcode_projects | head -1)
   echo "Opening $project_file with $xcode"
+  open -a $xcode $project_file
 }
 
 function xcbeta() {
-  xc /Application/Xcode-beta.app
+  echo "XCBETA()"
+  xc /Applications/Xcode-beta.app
 }

@@ -73,11 +73,13 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+#
+eval "$(rbenv init -)"
 
 fpath+=~/.zsh/functions
 
 autoload ruby-helpers && ruby-helpers
+
 autoload xcode-helpers && xcode-helpers
 autoload git-helpers && git-helpers
 autoload colors && colors
@@ -86,3 +88,16 @@ source ~/.zsh/aliases
 source ~/.zsh/prompt
 source ~/.zsh/config
 [ -f ~/.zsh/secrets ] && source ~/.zsh/secrets
+
+export EDITOR="mvim -f"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+pg_bin=/Applications/Postgres.app/Contents/Versions/latest/bin
+if [ -d $pg_bin ];
+then
+  PATH=$pg_bin:$PATH
+fi
