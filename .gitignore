@@ -2,3 +2,5 @@
 .zsh/secrets
 .vim/_backup
 .vim/_temp
+.vim/.netrwhist
+.config/iterm2

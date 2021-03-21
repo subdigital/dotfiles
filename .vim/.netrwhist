@@ -1,3 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/ben/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/frameit-2.7.0'
