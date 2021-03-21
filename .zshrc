@@ -89,7 +89,7 @@ source ~/.zsh/prompt
 source ~/.zsh/config
 [ -f ~/.zsh/secrets ] && source ~/.zsh/secrets
 
-export EDITOR="mvim -f"
+export EDITOR="code"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
