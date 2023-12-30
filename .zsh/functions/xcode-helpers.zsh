@@ -1,7 +1,7 @@
 
 function find_xcode_projects() {
   cat <<EOF | ruby -rfileutils
-  files = Dir.glob('**/*.{xcworkspace,xcodeproj}')
+  files = (Dir.glob('**/*.{xcworkspace,xcodeproj}') + Dir.glob('**/Package.swift'))
     .reject { |p|
       p.include?('Pods') ||
       p.include?('xcodeproj/project.xcworkspace')
@@ -20,7 +20,17 @@ function xc() {
   open -a $xcode $project_file
 }
 
+function xcrosetta() {
+  xc /Applications/Xcode\ Rosetta.app
+}
+
 function xcbeta() {
-  echo "XCBETA()"
-  xc /Applications/Xcode-beta.app
+  xcode_beta=$(ls /Applications/ | grep -i '^Xcode.*Beta.*\.app$' | head -n 1)
+  if [[ ! -d /Applications/$xcode_beta ]]
+  then
+    echo "Can't find an Xcode beta in /Applications"
+    exit 1
+  fi
+
+  xc $xcode_beta
 }

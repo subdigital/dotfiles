@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+#
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -9,6 +9,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
+# ZSH_THEME="awesomepanda"
+# ZSH_THEME="random"
+# ZSH_THEME="bira"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,25 +76,30 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-#
-eval "$(rbenv init -)"
+
+export EDITOR="vim"
 
 fpath+=~/.zsh/functions
 
-autoload ruby-helpers && ruby-helpers
-autoload xcode-helpers && xcode-helpers
-autoload git-helpers && git-helpers
-autoload pg-helpers && pg-helpers
-autoload colors && colors
+autoload ruby-helpers.zsh && ruby-helpers.zsh
+autoload xcode-helpers.zsh && xcode-helpers.zsh
+autoload git-helpers.zsh && git-helpers.zsh
+autoload pg-helpers.zsh && pg-helpers.zsh
 
-source ~/.zsh/aliases
-source ~/.zsh/prompt
-source ~/.zsh/config
-[ -f ~/.zsh/secrets ] && source ~/.zsh/secrets
+source ~/.zsh/aliases.zsh
+source ~/.zsh/prompt.zsh
+source ~/.zsh/config.zsh
+source ~/.zsh/ssh.zsh
 
-export EDITOR="code"
+[ -f ~/.zsh/secrets.zsh ] && source ~/.zsh/secrets.zsh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# encoding settings (expected for Fastlane)
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# source machine specific config
+source ~/.zsh/local/local_config.zsh

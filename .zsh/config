@@ -1,3 +1,0 @@
-EDITOR='code'
-TERM='xterm'
-PATH=~/bin:$PATH
