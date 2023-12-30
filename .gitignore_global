@@ -17,6 +17,9 @@ xcuserdata
 DerivedData
 *.xcuserstate
 .byebug_history
+.config/deluge
 
 *.orig
 tags
+
+/Users/ben/nsscreencast/site

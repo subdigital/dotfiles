@@ -9,17 +9,12 @@
   keepBackup = false;
 	tool = Kaleidoscope
 
-[mergetool "p4merge"]
-  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-  keepTemporaries = false
-  trustExitCode = false
-  keepBackup = false
-
 [alias]
 	datetag = !git tag -a `date \"+%Y%m%d%H%M\"` -m tagged
 	ctags = !.git/hooks/ctags
   lsd = log --graph --decorate --pretty=oneline --abbrev-commit --all
   mybranches = "!f() { if test $# = 0 ; then set -- refs/remotes ; fi ; git for-each-ref --format='%(authordate:relative)\t%(refname:short)\t%(authoremail)' --sort=authordate \"$@\" | sed -ne \"s/\t<$(git config user.email)>//p\" | column -s '\t' -t ; } ; f"
+	pushf = push --force-with-lease
 
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
@@ -32,7 +27,7 @@
 
 [core]
   pager = delta
-	excludesfile = /Users/ben/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim
 
 [delta]
@@ -43,16 +38,10 @@
 [interactive]
   diffFilter = delta --color-only
 
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-
 [init]
-	templatedir = ~/Dropbox/dotfiles/.git_template
+	templatedir = ~/.git_template/
+	defaultBranchName = main
+	defaultBranch = main
 
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
@@ -63,6 +52,7 @@
 
 [push]
 	default = current
+
 [filter "media"]
 	required = true
 	clean = git media clean %f

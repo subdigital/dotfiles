@@ -1,1 +1,0 @@
-<html><body>You are being <a href="https://raw.github.com/mrtazz/molokai.vim/master/colors/molokai.vim">redirected</a>.</body></html>
