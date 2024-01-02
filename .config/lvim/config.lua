@@ -124,6 +124,7 @@ vim.cmd([[
   au BufRead,BufNewFile Podfile set ft=ruby
   au BufRead,BufNewFile *.podspec set ft=ruby
   au BufRead,BufNewFile justfile set ft=make
+  au BufRead,BufNewFile Package.swift set ft=json
 ]])
 
 local virtual_text_enabled = false
