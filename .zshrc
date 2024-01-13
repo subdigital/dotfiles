@@ -103,3 +103,6 @@ export LANG=en_US.UTF-8
 
 # source machine specific config
 source ~/.zsh/local/local_config.zsh
+
+# Use mise to manage tool versions
+eval "$(mise activate zsh)"

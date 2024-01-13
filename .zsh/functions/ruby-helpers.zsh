@@ -1,5 +1,3 @@
-eval "$(rbenv init -)"
-
 function ruby_version() {
   ruby -v | cut -d '(' -f 1 | tr -d ' '
 }
