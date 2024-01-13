@@ -1,0 +1,5 @@
+{
+    "diagnostics.globals": [
+        "swift_lsp_setup"
+    ]
+}
