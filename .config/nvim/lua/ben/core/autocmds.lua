@@ -3,7 +3,7 @@
 -- Add any additional autocmds here
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-  pattern = "Dangerfile,Podfile,Gemfile,Fastfile*",
+  pattern = "Dangerfile,Podfile,Gemfile,Fastfile,Appfile,Vagrantfile,Thorfile,config.ru,*.podspec,Guardfile,Capfile,*.cap,*.rabl,",
   callback = function()
     local buf = vim.api.nvim_get_current_buf()
     vim.api.nvim_buf_set_option(buf, "filetype", "ruby")

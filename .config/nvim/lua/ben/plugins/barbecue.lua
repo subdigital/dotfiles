@@ -1,3 +1,4 @@
+-- provides a vscode-like navigation bar at the top
 return {
   "utilyre/barbecue.nvim",
   name = "barbecue",

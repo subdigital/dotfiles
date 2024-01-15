@@ -16,5 +16,8 @@ local opts = {
   install = { colorscheme = { "nightfly" } },
   checker = { enabled = true, notify = false }, -- automatically check for plugin updates
 }
-require("lazy").setup({ import = "ben.plugins" }, opts)
+require("lazy").setup({
+  { import = "ben.plugins" },
+  { import = "ben.plugins.lsp" }
+}, opts)
 

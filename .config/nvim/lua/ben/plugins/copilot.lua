@@ -7,5 +7,4 @@ return {
       panel = { enabled = true }, -- false will disable the suggestion popu
     })
   end,
-
 }
