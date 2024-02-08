@@ -1,6 +1,7 @@
 return {
   "zbirenbaum/copilot-cmp",
-  enabled = false,
+  enabled = true,
+  event = { "BufEnter" },
   config = function()
     require("copilot_cmp").setup({
       suggestion = { enabled = true },
