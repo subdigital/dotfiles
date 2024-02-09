@@ -6,3 +6,11 @@
 .config/iterm2
 
 .zsh/local/APHCJ7JF80FEFA.zsh
+
+# Some tools put secrets/runtime stuff into .config
+.config/github_copilot
+.config/exercism
+.config/hub
+.config/gh
+
+.config/zed/embeddings
