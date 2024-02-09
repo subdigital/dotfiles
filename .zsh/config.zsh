@@ -1,3 +1,3 @@
-EDITOR='code'
-TERM='xterm-256color'
-PATH=~/bin:~/.local/bin:$PATH
+export EDITOR='nvim'
+export TERM='xterm'
+export LANG=en_US.UTF-8
