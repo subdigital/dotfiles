@@ -9,6 +9,7 @@ return {
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
     local harpoon = require("harpoon.mark")
 
+    -- show if this file is harpooned (and how many harpoon marks we have)
     local function harpoon_component()
       local total_marks = harpoon.get_length()
 
