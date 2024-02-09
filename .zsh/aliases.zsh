@@ -1,5 +1,7 @@
 alias ea="$EDITOR ~/.zsh/aliases.zsh && reload"
 
+alias vim=nvim
+
 # Starts an HTTP Server on port 8000
 alias server="open -a /Applications/Safari.app http://localhost:8000 && python -m SimpleHTTPServer 8000"
 

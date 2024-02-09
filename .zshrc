@@ -17,8 +17,10 @@ plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/config.zsh
+eval "$(mise activate zsh)"
+
+source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/git.zsh
 source $HOME/.zsh/postgres.zsh
 source $HOME/.zsh/prompt.zsh
@@ -28,7 +30,6 @@ source $HOME/.zsh/ssh.zsh
 source $HOME/.zsh/xcode.zsh
 
 # source machine-specific config (by hostname)
-source $HOME/.zsh/local_config.zsh
+source $HOME/.zsh/local/local_config.zsh
 
-eval "$(mise activate zsh)"
 
