@@ -20,7 +20,7 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
 -- show sign column always so text doesn't shift when it is added
-opt.signcolumn = "yes" 
+opt.signcolumn = "yes"
 
 -- clipboard
 opt.clipboard:append("unnamedplus")

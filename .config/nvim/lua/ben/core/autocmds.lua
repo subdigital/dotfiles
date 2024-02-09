@@ -10,6 +10,14 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "justfile",
+  callback = function()
+    local buf = vim.api.nvim_get_current_buf()
+    vim.api.nvim_buf_set_option(buf, "filetype", "make")
+  end,
+})
+
 -- open neotree automatically if you specify a folder
 vim.api.nvim_create_augroup("neotree", {})
 vim.api.nvim_create_autocmd("VimEnter", {
