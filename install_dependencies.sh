@@ -7,9 +7,6 @@ set -e
 echo "📦 Installing neovim..."
 brew install neovim
 
-echo "📦 Installing fzf..."
-brew install fzf
-
 echo "📦 Installing git-delta..."
 brew install git-delta
 
@@ -22,6 +19,12 @@ brew install wget
 echo "📦 Installing gh and hub..."
 brew install gh
 brew install hub
+
+echo "🖥️ Installing wezterm..."
+brew install --cask wezterm
+
+echo "🚀 Installing starship..."
+brew install starship
 
 # Symlink vim -> nvim
 if [[ "$(readlink /usr/local/bin/vim)" == "/usr/local/bin/nvim" ]]
