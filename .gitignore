@@ -1,6 +1,8 @@
 .bash/secrets.bash
-.zsh/secrets
+.zsh/secrets.zsh
 .vim/_backup
 .vim/_temp
 .vim/.netrwhist
 .config/iterm2
+
+.zsh/local/APHCJ7JF80FEFA.zsh
