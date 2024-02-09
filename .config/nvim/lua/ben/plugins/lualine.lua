@@ -1,9 +1,29 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    "ThePrimeagen/harpoon"
+  },
   config = function()
     local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+    local harpoon = require("harpoon.mark")
+
+    local function harpoon_component()
+      local total_marks = harpoon.get_length()
+
+      if total_marks == 0 then
+        return ""
+      end
+
+      local current_mark = "-"
+      local mark_idx = harpoon.get_current_index()
+      if mark_idx ~= nil then
+        current_mark = tostring(mark_idx)
+      end
+
+      return string.format("󱡅  %s/%d", current_mark, total_marks)
+    end
 
     local colors = {
       blue = "#65D1FF",
@@ -52,10 +72,14 @@ return {
     -- configure lualine with modified theme
     lualine.setup({
       options = {
-        theme = "horizon",
+        -- theme = "horizon",
+        theme = my_lualine_theme,
+        -- theme = "catppuccin",
+        globalstatus = true -- always visible, instead of one for every window
       },
       sections = {
         lualine_x = {
+          harpoon_component,
           {
             lazy_status.updates,
             cond = lazy_status.has_updates,
