@@ -24,7 +24,7 @@ def create_symlink(source, target)
     puts "File #{target} exists.  Overwrite it (y/n)?"
     if $stdin.gets.chomp.downcase == 'y'
       puts "#{'DELETING'.red} #{target}"
-      raise "This shouldn't happen, but if it does, I'm refusing to delete /" if target_path == "/"
+      raise "This shouldn't happen, but if it does, I'm refusing to delete /" if target == "/"
 
       FileUtils.rm_r(target)
     else
