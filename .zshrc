@@ -20,7 +20,9 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/config.zsh
 source $HOME/.zsh/git.zsh
+source $HOME/.zsh/postgres.zsh
 source $HOME/.zsh/prompt.zsh
+source $HOME/.zsh/ruby.zsh
 source $HOME/.zsh/secrets.zsh
 source $HOME/.zsh/ssh.zsh
 source $HOME/.zsh/xcode.zsh

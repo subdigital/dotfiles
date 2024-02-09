@@ -1,4 +1,3 @@
-
 function find_xcode_projects() {
   cat <<EOF | ruby -rfileutils
   files = (Dir.glob('**/*.{xcworkspace,xcodeproj}') + Dir.glob('**/Package.swift'))
