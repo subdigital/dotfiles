@@ -27,14 +27,15 @@ return {
     end
   },
   {
-    "catppuccin/vim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme catppuccin_mocha]])
-      -- vim.cmd([[colorscheme catppuccin_latte]])
-      -- vim.cmd([[colorscheme catppuccin_frappe]])
-      -- vim.cmd([[colorscheme catppuccin_macchiato]])
+      vim.cmd([[colorscheme catppuccin-mocha]])
+      -- vim.cmd([[colorscheme catppuccin-latte]])
+      -- vim.cmd([[colorscheme catppuccin-frappe]])
+      -- vim.cmd([[colorscheme catppuccin-macchiato]])
     end
   }
 }
