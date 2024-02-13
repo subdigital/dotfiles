@@ -1,7 +1,7 @@
 alias g="git status"
 alias gd="git diff"
 alias gcb="git checkout -b"
-alias gb="git branch"
+alias gb="git branch --column --sort=-committerdate"
 alias grc="git rebase --continue"
 alias gc="git commit"
 alias gca="git commit -v -a"
