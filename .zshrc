@@ -25,11 +25,15 @@ source $HOME/.zsh/git.zsh
 source $HOME/.zsh/postgres.zsh
 source $HOME/.zsh/prompt.zsh
 source $HOME/.zsh/ruby.zsh
-source $HOME/.zsh/secrets.zsh
 source $HOME/.zsh/ssh.zsh
 source $HOME/.zsh/xcode.zsh
 
+if [[ -f $HOME/.zsh/secrets.zsh ]]; then
+  source $HOME/.zsh/secrets.zsh
+else
+  touch $HOME/.zsh/secrets.zsh
+fi
+
 # source machine-specific config (by hostname)
 source $HOME/.zsh/local/local_config.zsh
-
 
