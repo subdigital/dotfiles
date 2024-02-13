@@ -16,7 +16,8 @@ km.set("n", "<s-l>", "<cmd>tabn<cr>")
 km.set("n", "<s-h>", "<cmd>tabp<cr>")
 
 -- quick open config
-km.set("n", "<leader>V", ":tabe ~/.config/nvim/init.lua<cr>:Lazy load neo-tree.nvim<cr>:Neotree reveal left reveal_force_cwd<cr>")
+--
+km.set("n", "<leader>V", ":tabe ~/.config/nvim/init.lua<cr>:Lazy load neo-tree.nvim<cr>:Neotree reveal left reveal_force_cwd<cr>", { desc = "Quick open nvim config" })
 
 -- close buffer
 km.set("n", "<leader>bc", "<cmd>bdelete<cr>", { noremap = true, silent = true })
