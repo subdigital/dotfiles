@@ -26,6 +26,9 @@ brew install --cask wezterm
 echo "🚀 Installing starship..."
 brew install starship
 
+echo "🤘 Installing zoxide"
+brew install zoxide
+
 # Symlink vim -> nvim
 if [[ "$(readlink /usr/local/bin/vim)" == "/usr/local/bin/nvim" ]]
 then
