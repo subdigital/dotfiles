@@ -11,11 +11,10 @@ alias gl="git log --oneline"
 unalias gco 2>/dev/null
 
 function gco() {
-  echo "running gco func"
   if [ $# -eq 0 ]
   then
     # search for a branch w/ fuzzy finder and then check it out
-    git branch | fzf | xargs git checkout
+    git branch --sort=-committerdate | fzf | xargs git checkout
   else
     # pass the args to git checkout
     git checkout $*
