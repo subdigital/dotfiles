@@ -16,10 +16,10 @@ config.hide_tab_bar_if_only_one_tab = true
 
 -- window
 config.window_padding = {
-  left = 0,
-  right = 0,
+  left = 4,
+  right = 4,
   top = 0,
-  bottom = 0,
+  bottom = 1,
 }
 
 -- keybinds
