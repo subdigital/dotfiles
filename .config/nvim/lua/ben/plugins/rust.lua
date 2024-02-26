@@ -20,5 +20,8 @@ return {
         end
       }
     }
+
+    local keymap = vim.keymap
+    keymap.set("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", { desc = "Code Action" })
   end
 }
