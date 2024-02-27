@@ -25,8 +25,8 @@ return {
 
         vim.cmd("ToggleTerm direction=" .. dirs[dir_index + 1] .. " size=" .. size)
       end
-      -- ctrl pipe to cycle through the different term layouts
-      vim.keymap.set("n", "<c-|>", cycle, { noremap = true, silent = true })
+      -- ctrl slash to cycle through the different term layouts
+      vim.keymap.set("n", "<c-/>", cycle, { noremap = true, silent = true })
     end,
   },
 }
