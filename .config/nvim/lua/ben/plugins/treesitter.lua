@@ -14,6 +14,7 @@ return {
       "regex",
       "ruby",
       "swift",
+      "svelte",
       "tsx",
       "typescript",
       "vim",
