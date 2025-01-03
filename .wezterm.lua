@@ -57,6 +57,43 @@ config.keys = {
     action = act.PaneSelect
   },
 
+  -- activate pane left/right/up/down
+  {
+    key = 'LeftArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivatePaneDirection 'Left'
+  },
+  {
+    key = 'RightArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivatePaneDirection 'Right'
+  },
+  {
+    key = 'UpArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivatePaneDirection 'Up'
+  },
+  {
+    key = 'DownArrow',
+    mods = 'CTRL|SHIFT',
+    action = act.ActivatePaneDirection 'Down'
+  },
+
+  -- zoom pane
+  {
+    key = '0',
+    mods = 'CTRL',
+    action = act.TogglePaneZoomState
+  },
+
+  -- toggle full screen
+  {
+    key = 'f',
+    mods = 'CTRL|SHIFT',
+    action = act.ToggleFullScreen,
+    native_macos_fullscreen_mode = true
+  },
+
   -- Make Option-Left/Right equivalent to Alt-b/f which many line editors interpret as backward-word or forward word
   {
     key = "LeftArrow",
