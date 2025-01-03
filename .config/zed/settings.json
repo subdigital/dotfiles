@@ -7,8 +7,34 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4"
+    },
+    "version": "2"
+  },
+  "features": {
+    "inline_completion_provider": "copilot"
+  },
   "base_keymap": "VSCode",
   "theme": "Andromeda",
-  "buffer_font_size": 15,
-  "vim_mode": true
+  "buffer_font_size": 16,
+  "vim_mode": true,
+  "ui_font_family": "Iosevka Nerd Font Mono",
+  "buffer_font_family": "Iosevka Nerd Font Mono",
+  "languages": {
+    "Ruby": {
+      "language_servers": ["ruby-lsp", "!solargraph"]
+    }
+  },
+
+  "lsp": {
+    "ruby-lsp": {
+      "binary": {
+        "command": "mise x -- ruby-lsp"
+      },
+      "initialization_options": {}
+    }
+  }
 }
