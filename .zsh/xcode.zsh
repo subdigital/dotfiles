@@ -19,10 +19,6 @@ function xc() {
   open -a $xcode $project_file
 }
 
-function xcrosetta() {
-  xc /Applications/Xcode\ Rosetta.app
-}
-
 function xcbeta() {
   xcode_beta=$(ls /Applications/ | grep -i '^Xcode.*Beta.*\.app$' | head -n 1)
   if [[ ! -d /Applications/$xcode_beta ]]
