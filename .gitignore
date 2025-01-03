@@ -15,8 +15,11 @@
 .config/wireshark
 .config/sql_conn.json
 
+# Machine specific
+.config/mise/
+
 # Raycast is very noisy in ~/.config
-.config/raycast/extensions
+.config/raycast/extensions/
 
 # Remove most of Zed's runtime files, leave config
 .config/zed/embeddings
