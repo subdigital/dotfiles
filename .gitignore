@@ -12,5 +12,14 @@
 .config/exercism
 .config/hub
 .config/gh
+.config/wireshark
+.config/sql_conn.json
 
+# Raycast is very noisy in ~/.config
+.config/raycast/extensions
+
+# Remove most of Zed's runtime files, leave config
 .config/zed/embeddings
+.config/zed/.tmp*
+.config/zed/conversations/
+.config/zed/prompts/
