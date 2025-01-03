@@ -21,7 +21,8 @@ return {
       "yaml",
     },
     indent = {
-      enabled = true
+      -- enabled = true
+      enabled = false
     },
     incremental_selection = {
       enable = true,

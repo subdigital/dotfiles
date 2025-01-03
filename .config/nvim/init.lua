@@ -5,4 +5,3 @@ if vim.g.neodvide then
   require("ben.neovide")
 end
 
-

@@ -11,6 +11,18 @@ return {
     { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "NeoTree", silent = true },
     { "<leader>j", "<cmd>Neotree filesystem reveal left reveal_file=%<cr>", desc = "Reveal file NeoTree", silent = true },
   },
+  opts = {
+    filesystem = {
+      filtered_items = {
+        visible = true,
+        hide_dotfiles = false,
+        hide_by_name = {
+          ".DS_Store",
+          ".gitignore"
+        }
+      }
+    }
+  },
   config = function()
     require("neo-tree").setup()
   end

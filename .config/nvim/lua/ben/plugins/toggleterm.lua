@@ -27,6 +27,7 @@ return {
       end
       -- ctrl slash to cycle through the different term layouts
       vim.keymap.set("n", "<c-/>", cycle, { noremap = true, silent = true })
+      vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true, silent = true })
     end,
   },
 }

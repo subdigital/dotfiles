@@ -70,7 +70,7 @@ return {
       filetypes = { "html", "html.erb" }
     })
 
-    lspconfig["tsserver"].setup({
+    lspconfig["ts_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach
     })
@@ -95,9 +95,25 @@ return {
       }
     })
 
-    lspconfig["solargraph"].setup({
+    -- lspconfig["solargraph"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach
+    -- })
+
+    lspconfig["ruby_lsp"].setup({
       capabilities = capabilities,
-      on_attach = on_attach
+      on_attach = on_attach,
+      cmd = { "mise", "x", "--", "ruby-lsp" },
+      init_options = {
+        formatters = {'standard'},
+        linters = {'standard'}
+      }
+    })
+
+    lspconfig["standardrb"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      cmd = { "mise", "x", "--", "standardrb", "--lsp" }
     })
 
     lspconfig["sourcekit"].setup({

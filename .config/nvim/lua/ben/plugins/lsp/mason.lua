@@ -22,7 +22,7 @@ return {
       ensure_installed = {
         "html",
         "lua_ls",
-        "tsserver",
+        "ts_ls",
       },
       -- install configured servers with lspconfig automatically
       automatic_installation = true,

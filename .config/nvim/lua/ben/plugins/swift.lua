@@ -1,0 +1,3 @@
+return {
+  "keith/swift.vim"
+}
