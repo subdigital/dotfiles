@@ -50,3 +50,31 @@ km.set("n", "<a-j>", ":m .+1<cr>==", { silent = true, noremap = true })
 -- keep selection while indenting
 km.set("v", ">", ">gv", { silent = true, noremap = true })
 km.set("v", "<", "<gv", { silent = true, noremap = true })
+
+-- go to file in previous window
+
+-- this function but in lua
+--  map <F8> :let mycurf=expand("<cfile>")<cr><c-w> w :execute("e ".mycurf)<cr><c-w>p
+--
+
+M = {}
+function M.open_file_in_another_window()
+  -- get the file under the cursor
+  local cur_file = vim.fn.expand("<cfile>")
+
+  -- save the current window id
+  local cur_win = vim.api.nvim_get_current_win()
+
+  -- switch to the previous window
+  vim.api.nvim_command("wincmd p")
+  vim.api.nvim_command("edit" .. cur_file)
+
+  -- switch back?
+  -- vim.api.nvim_set_current_win(cur_win)
+end
+
+km.set(
+  "n",
+  "<F8>", [[:lua M.open_file_in_another_window()<cr>]],
+  { silent = true, noremap = true }
+  )
