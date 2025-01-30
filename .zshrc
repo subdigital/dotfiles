@@ -4,6 +4,8 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.mint/bin:$PATH
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -38,4 +40,9 @@ fi
 
 # source machine-specific config (by hostname)
 source $HOME/.zsh/local/local_config.zsh
+
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey "^[[A" history-search-backward 
+bindkey "^[[B" history-search-forward
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
