@@ -19,10 +19,14 @@ return {
       "typescript",
       "vim",
       "yaml",
+      "zig"
     },
     indent = {
       -- enabled = true
       enabled = false
+    },
+    highlight = {
+      enable = true
     },
     incremental_selection = {
       enable = true,
