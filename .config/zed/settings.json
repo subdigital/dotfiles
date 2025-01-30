@@ -19,10 +19,27 @@
   },
   "base_keymap": "VSCode",
   "theme": "Andromeda",
-  "buffer_font_size": 16,
-  "vim_mode": true,
-  "ui_font_family": "Iosevka Nerd Font Mono",
+  "buffer_font_size": 13,
   "buffer_font_family": "Iosevka Nerd Font Mono",
+  "vim_mode": true,
+
+  "ui_font_family": "Iosevka Nerd Font Mono",
+  "inlayHints": {
+    "maxLength": null,
+    "lifetimeElisionHints": {
+      "useParameterNames": true,
+      "enable": "skip_trivial"
+    },
+    "closureReturnTypeHints": {
+      "enable": "always"
+    }
+  },
+
+  "file_types": {
+    "Ruby": ["Podfile", "Gemfile", "Fastfile*", "Dangerfile*"],
+    "Starlark": ["*.bzl", "BUILD", "WORKSPACE", "MODULE"]
+  }, 
+
   "languages": {
     "Ruby": {
       "language_servers": ["ruby-lsp", "!solargraph"]

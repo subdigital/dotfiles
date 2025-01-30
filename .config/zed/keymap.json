@@ -17,7 +17,7 @@
     "bindings": {
       // "j k": ["workspace::SendKeystrokes", "escape"]
       "cmd-k cmd-s": "zed::OpenKeymap",
-      "ctrl-\\": "terminal_panel::ToggleFocus",
+      "ctrl-\\": "workspace::ToggleBottomDock", // or :ToggleFocus?
       "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
