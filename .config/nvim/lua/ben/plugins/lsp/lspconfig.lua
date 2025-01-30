@@ -136,6 +136,27 @@ return {
       on_attach = on_attach
     })
 
+    lspconfig["clangd"].setup({
+      cmd = {
+        "clangd",
+        "--background-index",
+        "--pch-storage=memory",
+        "--all-scopes-completion",
+        "--pretty",
+        "--header-insertion=never",
+        "-j=4",
+        "--inlay-hints",
+        "--header-insertion-decorators",
+        "--function-arg-placeholders",
+        "--completion-style=detailed"
+      },
+      filetypes = { "c", "cpp", "objc", "objcpp" },
+      root_dir = lspconfig.util.root_pattern("src"),
+      -- init_options = { fallbackFlags = { "-std=c++2a" } },
+      capabilities = capabilities,
+      single_file_support = true
+    })
+
     -- lspconfig["rust_analyzer"].setup({
     --   capabilities = capabilities,
     --   on_attach = on_attach
