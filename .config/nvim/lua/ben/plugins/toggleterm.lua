@@ -5,7 +5,7 @@ return {
     opts = {
       open_mapping = [[<c-\>]],
       shade_terminals = true,
-      shading_factor = 2
+      shading_factor = 2,
     },
     init = function()
       -- create a table of dirs to cycle through when we press a button
@@ -31,4 +31,3 @@ return {
     end,
   },
 }
-
