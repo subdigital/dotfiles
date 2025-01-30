@@ -19,6 +19,14 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 })
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "build.zig",
+  callback = function ()
+    local buf = vim.api.nvim_get_current_buf()
+    vim.api.nvim_buf_set_option(buf, "filetype", "zig")
+  end
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "justfile",
   callback = function()
     local buf = vim.api.nvim_get_current_buf()
