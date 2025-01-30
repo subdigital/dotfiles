@@ -1,7 +1,8 @@
 return {
-  "echasnovski/mini.ai",
-  enabled = true,
+  "echasnovski/mini.operators",
+  dependencies = {
+  },
   config = function()
-    require("mini.ai").setup()
-  end
+    require("mini.operators").setup()
+  end,
 }
