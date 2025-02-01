@@ -18,6 +18,9 @@ alias reload="source ~/.zshrc"
 
 alias python=python3
 
+# rg is better, but muscle memory is strong
+alias ag=rg
+
 # Open the man page as PDF in preview. Hat tip @ericasadun!
 function manpdf() {
   man -t $1 | open -fa /System/Applications/Preview.app
