@@ -1,1 +1,1 @@
-vim.opt_local.indentkeys:append({"0>", "0@"})
+vim.opt_local.indentkeys:append({ "0>", "0@" })
