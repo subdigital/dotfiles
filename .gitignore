@@ -6,12 +6,14 @@
 .config/iterm2
 
 .zsh/local/APHCJ7JF80FEFA.zsh
+.zsh/local/APT62MH547C086.zsh
 
 # Some tools put secrets/runtime stuff into .config
 .config/github_copilot
 .config/exercism
 .config/hub
 .config/gh
+
 .config/wireshark
 .config/sql_conn.json
 
@@ -23,6 +25,8 @@
 
 # Remove most of Zed's runtime files, leave config
 .config/zed/embeddings
+.config/zed/prompts
+.config/zed/conversations
 .config/zed/.tmp*
 .config/zed/conversations/
 .config/zed/prompts/
