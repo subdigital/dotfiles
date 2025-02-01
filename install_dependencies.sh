@@ -4,30 +4,26 @@ set -e
 
 # This will install dependencies used by these dotfiles. Assumes homebrew is installed.
 
-echo "📦 Installing neovim..."
-brew install neovim
+function install_package() {
+  echo "📦 Installing $1..."
+  brew install $1
+}
 
-echo "📦 Installing git-delta..."
-brew install git-delta
+function install_cask_package() {
+  echo "📦 Installing $1..."
+  brew install --cask $1
+}
 
-echo "📦 Installing rg..."
-brew install rg
-
-echo "📦 Installing wget..."
-brew install wget
-
-echo "📦 Installing gh and hub..."
-brew install gh
-brew install hub
-
-echo "🖥️ Installing wezterm..."
-brew install --cask wezterm
-
-echo "🚀 Installing starship..."
-brew install starship
-
-echo "🤘 Installing zoxide"
-brew install zoxide
+install_package neovim
+install_package git-delta
+install_package rg
+install_package fzf
+install_package wget
+install_package gh
+install_package hub
+install_cask_package wezterm
+install_package starship
+install_package zoxide
 
 # Symlink vim -> nvim
 if [[ "$(readlink /usr/local/bin/vim)" == "/usr/local/bin/nvim" ]]
@@ -41,7 +37,7 @@ fi
 # Fonts
 echo "📘 Installing homebrew/cask-fonts"
 brew tap homebrew/cask-fonts
-brew install font-iosevka-nerd-font
-brew install font-hack-nerd-font
-brew install font-jetbrains-mono-nerd-font
+install_package font-iosevka-nerd-font
+install_package font-hack-nerd-font
+install_package font-jetbrains-mono-nerd-font
 
