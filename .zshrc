@@ -20,10 +20,9 @@ plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 source $HOME/.zsh/config.zsh
-eval "$(mise activate zsh)"
 
-eval "$(zoxide init --cmd cd zsh)"
-
+source $HOME/.zsh/mise.zsh
+source $HOME/.zsh/zoxide.zsh
 source $HOME/.zsh/aliases.zsh
 source $HOME/.zsh/git.zsh
 source $HOME/.zsh/postgres.zsh

@@ -23,6 +23,9 @@
 # Raycast is very noisy in ~/.config
 .config/raycast/extensions/
 
+# Ignore yazi plugins, they will be installed automatically
+.config/yazi/flavors
+
 # Remove most of Zed's runtime files, leave config
 .config/zed/embeddings
 .config/zed/prompts
