@@ -62,5 +62,6 @@
   "vim-vsnip-integ": { "branch": "master", "commit": "90ae474e8b05ed41e36d6f58382a9fbfb4b672c4" },
   "which-key.nvim": { "branch": "main", "commit": "0e76a87ac51772569aec678dc74baa8e2a86100c" },
   "xcodebuild.nvim": { "branch": "main", "commit": "a8dafc2cbe4503fb0dfb0b11399e3e6b69b1d543" },
+  "yazi.nvim": { "branch": "main", "commit": "8ca8653de81bce22d6766b7fd2ce2bc6ff410b21" },
   "zig.vim": { "branch": "master", "commit": "f023e86b042c0d5bef68b9f0651144a6bf6d642e" }
 }
