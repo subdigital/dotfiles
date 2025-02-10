@@ -24,15 +24,12 @@ install_package hub
 install_cask_package wezterm
 install_package starship
 install_package zoxide
+install_package lazygit
+install_package zsh-autosuggestions
+install_package zsh-syntax-highlighting
 
-echo "🤖 Installing lazygit..."
-brew install lazygit
-
-echo "🤖 Installing zoxide..."
-brew install zoxide
-
-echo "🗄️ Installing yazi..."
-brew install yazi
+# Install yazi and plugins
+install_package yazi
 ya pack --install
 
 # Symlink vim -> nvim
