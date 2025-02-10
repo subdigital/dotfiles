@@ -16,7 +16,7 @@ return {
   },
   opts = {
     keymaps = {
-      change_working_directory = "."
+      change_working_directory = "<c-.>"
     }
   },
 }
