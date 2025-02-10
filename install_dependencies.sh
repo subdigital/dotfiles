@@ -42,8 +42,7 @@ else
 fi
 
 # Fonts
-echo "📘 Installing homebrew/cask-fonts"
-brew tap homebrew/cask-fonts
+echo "📘 Installing fonts"
 install_package font-iosevka-nerd-font
 install_package font-hack-nerd-font
 install_package font-jetbrains-mono-nerd-font
