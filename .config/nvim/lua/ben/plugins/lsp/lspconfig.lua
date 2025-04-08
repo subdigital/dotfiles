@@ -2,13 +2,13 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp"
+    "hrsh7th/cmp-nvim-lsp",
   },
   config = function()
     local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local keymap = vim.keymap
-    local opts = { noremap=true, silent=true }
+    local opts = { noremap = true, silent = true }
     local on_attach = function(client, bufnr)
       -- opts.bufnr = bufnr
 
@@ -57,7 +57,7 @@ return {
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
     -- change diagnostic symbols in the gutter
-    local signs = { Error = "🅧 ", Warn = "⚠️ ", Hint = "★ ", Info = "ℹ " }
+    local signs = { Error = "🅧 ", Warn = "⚠︎ ", Hint = "★ ", Info = "ℹ " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -67,12 +67,12 @@ return {
     lspconfig["html"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      filetypes = { "html", "html.erb" }
+      filetypes = { "html", "html.erb" },
     })
 
     lspconfig["ts_ls"].setup({
       capabilities = capabilities,
-      on_attach = on_attach
+      on_attach = on_attach,
     })
 
     lspconfig["lua_ls"].setup({
@@ -82,17 +82,17 @@ return {
         Lua = {
           -- make lua_ls recognize the vim global variable
           diagnostics = {
-            globals = { "vim" }
+            globals = { "vim" },
           },
           workspace = {
             -- make the library aware of runtime files
             library = {
               [vim.fn.expand("$VIMRUNTIME/lua")] = true,
               [vim.fn.stdpath("config")] = true,
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      },
     })
 
     -- lspconfig["solargraph"].setup({
@@ -105,35 +105,40 @@ return {
       on_attach = on_attach,
       cmd = { "mise", "x", "--", "ruby-lsp" },
       init_options = {
-        formatters = {'standard'},
-        linters = {'standard'}
-      }
+        formatters = { "standard" },
+        linters = { "standard" },
+      },
     })
 
     lspconfig["standardrb"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      cmd = { "mise", "x", "--", "standardrb", "--lsp" }
+      cmd = { "mise", "x", "--", "standardrb", "--lsp" },
     })
 
     lspconfig["sourcekit"].setup({
       capabilities = capabilities,
-      on_attach = on_attach
+      on_attach = on_attach,
     })
 
     lspconfig["svelte"].setup({
       capabilities = capabilities,
-      on_attach = on_attach
+      on_attach = on_attach,
     })
 
     lspconfig["tailwindcss"].setup({
       capabilities = capabilities,
-      on_attach = on_attach
+      on_attach = on_attach,
     })
 
     lspconfig["zls"].setup({
       capabilities = capabilities,
-      on_attach = on_attach
+      on_attach = on_attach,
+    })
+
+    lspconfig["gopls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
     })
 
     lspconfig["clangd"].setup({
@@ -148,13 +153,13 @@ return {
         "--inlay-hints",
         "--header-insertion-decorators",
         "--function-arg-placeholders",
-        "--completion-style=detailed"
+        "--completion-style=detailed",
       },
       filetypes = { "c", "cpp", "objc", "objcpp" },
       root_dir = lspconfig.util.root_pattern("src"),
       -- init_options = { fallbackFlags = { "-std=c++2a" } },
       capabilities = capabilities,
-      single_file_support = true
+      single_file_support = true,
     })
 
     -- lspconfig["rust_analyzer"].setup({
@@ -162,5 +167,5 @@ return {
     --   on_attach = on_attach
     --
     -- })
-  end
+  end,
 }

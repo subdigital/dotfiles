@@ -17,15 +17,20 @@ km.set("n", "<s-h>", "<cmd>tabp<cr>")
 
 -- quick open config
 --
-km.set("n", "<leader>V", ":tabe ~/.config/nvim/init.lua<cr>:Lazy load neo-tree.nvim<cr>:Neotree reveal left reveal_force_cwd<cr>", { desc = "Quick open nvim config" })
+km.set(
+  "n",
+  "<leader>V",
+  ":tabe ~/.config/nvim/init.lua<cr>:Lazy load neo-tree.nvim<cr>:Neotree reveal left reveal_force_cwd<cr>",
+  { desc = "Quick open nvim config" }
+)
 
 -- close buffer
 km.set("n", "<leader>bc", "<cmd>bdelete<cr>", { noremap = true, silent = true })
 
 -- easier saving/quitting
-km.set("n", "<leader>w", "<cmd>w<cr>", { noremap = true, silent = true, desc = "Save"})
-km.set("n", "<leader>q", "<cmd>q<cr>", { noremap = true, silent = true, desc = "Quit"})
-km.set("n", "<leader>wq", "<cmd>wq<cr>", { noremap = true, silent = true, desc = "Quit"})
+km.set("n", "<leader>w", "<cmd>w<cr>", { noremap = true, silent = true, desc = "Save" })
+km.set("n", "<leader>q", "<cmd>q<cr>", { noremap = true, silent = true, desc = "Quit" })
+km.set("n", "<leader>wq", "<cmd>wq<cr>", { noremap = true, silent = true, desc = "Quit" })
 
 -- find/replace in current buffer (for project wide, look in spectre.lua)
 km.set("n", "S", function()
@@ -73,8 +78,4 @@ function M.open_file_in_another_window()
   -- vim.api.nvim_set_current_win(cur_win)
 end
 
-km.set(
-  "n",
-  "<F8>", [[:lua M.open_file_in_another_window()<cr>]],
-  { silent = true, noremap = true }
-  )
+km.set("n", "<F8>", [[:lua M.open_file_in_another_window()<cr>]], { silent = true, noremap = true })
