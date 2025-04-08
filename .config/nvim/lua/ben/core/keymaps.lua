@@ -3,7 +3,7 @@ vim.g.mapleader = " "
 local km = vim.keymap
 
 -- clear search highlights
-km.set("n", "<cr>", "<cmd>nohl<cr>", { silent = true })
+km.set("n", "<c-n>", "<cmd>nohl<cr>", { silent = true, noremap = true })
 
 -- window navigation
 km.set("n", "<c-l>", "<c-w>l")
