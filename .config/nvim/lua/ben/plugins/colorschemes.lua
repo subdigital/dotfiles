@@ -1,12 +1,26 @@
 return {
   {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      require("kanagawa").setup({
+        compile = true,
+        transparent = true,
+        theme = "dragon",
+      })
+      vim.cmd([[colorscheme kanagawa]])
+    end,
+    build = function()
+      vim.cmd("KanagawaCompile")
+    end,
+  },
+  {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     opts = {},
     config = function()
       -- vim.cmd([[colorscheme tokyonight]])
-    end
+    end,
   },
   {
     "bluz71/vim-nightfly-colors",
@@ -14,8 +28,8 @@ return {
     priority = 1000,
     opts = {},
     config = function()
-      vim.cmd([[colorscheme nightfly]])
-    end
+      -- vim.cmd([[colorscheme nightfly]])
+    end,
   },
   {
     "bluz71/vim-moonfly-colors",
@@ -24,7 +38,7 @@ return {
     opts = {},
     config = function()
       -- vim.cmd([[colorscheme moonfly]])
-    end
+    end,
   },
   {
     "catppuccin/nvim",
@@ -36,7 +50,7 @@ return {
       -- vim.cmd([[colorscheme catppuccin-latte]])
       -- vim.cmd([[colorscheme catppuccin-frappe]])
       -- vim.cmd([[colorscheme catppuccin-macchiato]])
-    end
+    end,
   },
   {
     "xiyaowong/transparent.nvim",
@@ -45,9 +59,8 @@ return {
     priority = 1000,
     config = function()
       require("transparent").setup({
-        exclude_groups = { "NotifyBackground" }
+        exclude_groups = { "NotifyBackground" },
       })
-    end
-  }
+    end,
+  },
 }
-
