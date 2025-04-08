@@ -2,6 +2,7 @@
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
 
+-- set ruby filetypes for ruby files that don't have an extension
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "Dangerfile,Podfile,Gemfile,Fastfile,Appfile,Vagrantfile,Thorfile,config.ru,*.podspec,Guardfile,Capfile,*.cap,*.rabl,",
   callback = function()
@@ -10,6 +11,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   end,
 })
 
+-- set bazel file types
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "BUILD.*",
   callback = function()
@@ -18,14 +20,16 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   end,
 })
 
+-- zig files
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "build.zig",
-  callback = function ()
+  callback = function()
     local buf = vim.api.nvim_get_current_buf()
     vim.api.nvim_buf_set_option(buf, "filetype", "zig")
-  end
+  end,
 })
 
+-- just files
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "justfile",
   callback = function()
@@ -44,17 +48,17 @@ vim.api.nvim_create_autocmd("VimEnter", {
     if stats and stats.type == "directory" then
       require("neo-tree.setup.netrw").hijack()
     end
-  end
+  end,
 })
 
 -- automatically reload files when they change
-vim.api.nvim_create_autocmd({'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI'}, {
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
   pattern = "*",
-  command = "if mode() !~ '\v(c|r.?!|t)' && getcmdwintype() == '' | checktime | endif"
+  command = "if mode() !~ '\v(c|r.?!|t)' && getcmdwintype() == '' | checktime | endif",
 })
 
 -- notify w/ a message when this happens
-vim.api.nvim_create_autocmd({'FileChangedShellPost'}, {
+vim.api.nvim_create_autocmd({ "FileChangedShellPost" }, {
   pattern = "*",
-  command = "echohl WarningMsg | echo 'File changed on disk. Buffer reloaded.' | echohl None"
+  command = "echohl WarningMsg | echo 'File changed on disk. Buffer reloaded.' | echohl None",
 })
