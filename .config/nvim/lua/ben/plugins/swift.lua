@@ -1,3 +1,5 @@
 return {
-  "keith/swift.vim"
+  "keith/swift.vim",
+  enabled = false,
+  -- disabled for now
 }
