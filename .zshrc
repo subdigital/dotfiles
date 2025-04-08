@@ -30,6 +30,7 @@ source $HOME/.zsh/prompt.zsh
 source $HOME/.zsh/ruby.zsh
 source $HOME/.zsh/ssh.zsh
 source $HOME/.zsh/xcode.zsh
+source $HOME/.zsh/yazi.zsh
 
 if [[ -f $HOME/.zsh/secrets.zsh ]]; then
   source $HOME/.zsh/secrets.zsh
