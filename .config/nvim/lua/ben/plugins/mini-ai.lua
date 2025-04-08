@@ -1,17 +1,17 @@
 return {
+  -- arround/insert text objects
   "echasnovski/mini.ai",
-  dependencies = {
-  },
+  dependencies = {},
   config = function()
     local ai = require("mini.ai")
     ai.setup({
       custom_textobjects = {
-        s = { '%[%[().-()%]%]' },
+        s = { "%[%[().-()%]%]" },
         F = ai.gen_spec.treesitter({
-          a = '@function.outer', i = '@function.inner'
-        })
-      }
+          a = "@function.outer",
+          i = "@function.inner",
+        }),
+      },
     })
   end,
 }
-

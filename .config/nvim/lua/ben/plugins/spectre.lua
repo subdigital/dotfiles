@@ -4,13 +4,23 @@ return {
   lazy = true,
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "catppuccin/nvim"
+    "catppuccin/nvim",
   },
   keys = {
     { "<leader>S", "<cmd>lua require('spectre').toggle()<cr>", desc = "Project wide search", mode = "n" },
-    { "<leader>sw", "<cmd>lua require('spectre').open_visual({ select_word = true })<cr>", desc = "Sarch current word", mode = "n" },
+    {
+      "<leader>sw",
+      "<cmd>lua require('spectre').open_visual({ select_word = true })<cr>",
+      desc = "Sarch current word",
+      mode = "n",
+    },
     { "<leader>sw", "<cmd>lua require('spectre').open_visual()<cr>", desc = "Search current word", mode = "v" },
-    { "<leader>sf", "<cmd>lua require('spectre').open_file_search({ select_word = true })<cr>", desc = "Search in current file", mode = "v" },
+    {
+      "<leader>sf",
+      "<cmd>lua require('spectre').open_file_search({ select_word = true })<cr>",
+      desc = "Search in current file",
+      mode = "v",
+    },
   },
   config = function()
     local theme = require("catppuccin.palettes").get_palette("mocha")
@@ -23,13 +33,19 @@ return {
         search = "SpectreSearch",
         replace = "SpectreReplace",
       },
+      replace_engine = {
+        ["sed"] = {
+          cmd = "sed",
+          args = { "-i", "", "-E" },
+        },
+      },
       mapping = {
         ["send_to_qf"] = {
           map = "<c-q>",
           cmd = "<cmd>lua require('spectre.actions').send_to_qf()<cr>",
-          desc = "Send all items to quickfix"
-        }
-      }
+          desc = "Send all items to quickfix",
+        },
+      },
     })
-  end
+  end,
 }

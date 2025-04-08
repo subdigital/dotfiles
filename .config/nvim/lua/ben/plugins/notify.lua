@@ -5,7 +5,7 @@ return {
     vim.notify = notify
     notify.setup({
       -- needed if the bg is transparent
-      -- background_colour = "#000000",
+      background_colour = "#000000",
     })
   end,
 }

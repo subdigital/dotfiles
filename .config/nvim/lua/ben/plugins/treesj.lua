@@ -1,4 +1,5 @@
 return {
+  -- plugin for splitting/joining blocks
   "Wansmer/treesj",
   keys = { "<c-m>", "<c-j>" },
   config = function()
