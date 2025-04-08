@@ -31,3 +31,22 @@ opt.splitbelow = true
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- disable commandline until it is used
+vim.opt.cmdheight = 0
+
+-- preserve undo across sessions
+vim.opt.undofile = true
+
+-- show whitespace chars
+vim.opt.list = true
+vim.opt.listchars = { tab = "≫ ", trail = "･", nbsp = "␣" }
+
+-- preview substitutions as you type
+vim.opt.incsearch = true
+
+-- don't show the mode, it's already visible in the status line
+vim.opt.showmode = false
+
+-- start scrolling earlier
+vim.opt.scrolloff = 10
