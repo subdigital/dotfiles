@@ -46,7 +46,7 @@ vim.opt.listchars = { tab = "≫ ", trail = "･", nbsp = "␣" }
 vim.opt.incsearch = true
 
 -- don't show the mode, it's already visible in the status line
-vim.opt.showmode = false
+-- vim.opt.showmode = false
 
 -- start scrolling earlier
 vim.opt.scrolloff = 10
