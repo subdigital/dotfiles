@@ -10,4 +10,6 @@ return {
   opts = {
     -- configurations go here
   },
+  -- disabled to check the E36: Not enough room error
+  enabled = false,
 }
