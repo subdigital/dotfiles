@@ -2,7 +2,7 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
-    "ThePrimeagen/harpoon"
+    "ThePrimeagen/harpoon",
   },
   config = function()
     local lualine = require("lualine")
@@ -24,6 +24,14 @@ return {
       end
 
       return string.format("󱡅  %s/%d", current_mark, total_marks)
+    end
+
+    local function macro_recording()
+      local recording_register = vim.fn.reg_recording()
+      if recording_register ~= "" then
+        return "<REC> @" .. recording_register
+      end
+      return ""
     end
 
     local colors = {
@@ -76,9 +84,21 @@ return {
         -- theme = "horizon",
         theme = my_lualine_theme,
         -- theme = "catppuccin",
-        globalstatus = true -- always visible, instead of one for every window
+        globalstatus = true, -- always visible, instead of one for every window
       },
       sections = {
+        lualine_a = { "mode" },
+        lualine_b = { "branch" },
+        lualine_c = {
+          "filename",
+          {
+            macro_recording,
+            color = {
+              fg = "#ff0000",
+              gui = "bold",
+            },
+          },
+        },
         lualine_x = {
           harpoon_component,
           {
@@ -96,3 +116,26 @@ return {
     })
   end,
 }
+
+-- require('lualine').setup {
+--   sections = {
+--     lualine_a = {'mode'},
+--     lualine_b = {'branch'},
+--     lualine_c = {
+--       'filename',
+--       {
+--         function()
+--           local recording_register = vim.fn.reg_recording()
+--           if recording_register ~= '' then
+--             return 'Recording @' .. recording_register -- Display "Recording @a", etc.
+--           end
+--           return '' -- Empty string when not recording
+--         end,
+--         color = { fg = '#ff0000', gui = 'bold' }, -- Optional: Customize text color and style
+--       },
+--     },
+--     lualine_x = {'encoding', 'fileformat', 'filetype'},
+--     lualine_y = {'progress'},
+--     lualine_z = {'location'}
+--   },
+-- }
