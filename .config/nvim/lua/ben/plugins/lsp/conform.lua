@@ -9,6 +9,19 @@ return {
         rust = { "rustfmt" },
         c = { "clang_format" },
         cpp = { "clang_format" },
+        swift = nil,
+        -- swift = {
+        --   "swiftformat",
+        -- },
+      },
+
+      format_options = {
+        swiftformat = {
+          options = {
+            "--disable",
+            "trailingCommas",
+          },
+        },
       },
 
       format_on_save = function(bufnr)
