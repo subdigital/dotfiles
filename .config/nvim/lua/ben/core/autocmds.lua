@@ -5,7 +5,7 @@
 -- set ruby filetypes for ruby files that don't have an extension
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern =
-  pattern = "Dangerfile,Podfile,Gemfile,Fastfile*,Appfile,Vagrantfile,Thorfile,config.ru,*.podspec,Guardfile,Capfile,*.cap,*.rabl,",
+  "Dangerfile,Podfile,Gemfile,Fastfile*,Appfile,Vagrantfile,Thorfile,config.ru,*.podspec,Guardfile,Capfile,*.cap,*.rabl,",
   callback = function()
     local buf = vim.api.nvim_get_current_buf()
     vim.api.nvim_set_option_value("filetype", "ruby", { buf = buf })
