@@ -26,6 +26,9 @@
 # Ignore yazi plugins, they will be installed automatically
 .config/yazi/flavors
 
+# 1Password
+.config/op
+
 # Remove most of Zed's runtime files, leave config
 .config/zed/embeddings
 .config/zed/prompts
