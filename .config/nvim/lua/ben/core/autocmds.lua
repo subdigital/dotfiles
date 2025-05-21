@@ -4,6 +4,7 @@
 
 -- set ruby filetypes for ruby files that don't have an extension
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern =
   pattern = "Dangerfile,Podfile,Gemfile,Fastfile*,Appfile,Vagrantfile,Thorfile,config.ru,*.podspec,Guardfile,Capfile,*.cap,*.rabl,",
   callback = function()
     local buf = vim.api.nvim_get_current_buf()
@@ -16,7 +17,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "BUILD.*",
   callback = function()
     local buf = vim.api.nvim_get_current_buf()
-    vim.api.nvim_buf_set_option(buf, "filetype", "bzl")
+    vim.api.nvim_set_option_value("filetype", "bzl", { buf = buf })
   end,
 })
 
@@ -25,7 +26,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "build.zig",
   callback = function()
     local buf = vim.api.nvim_get_current_buf()
-    vim.api.nvim_buf_set_option(buf, "filetype", "zig")
+    vim.api.nvim_set_option_value("filetype", "zig", { buf = buf })
   end,
 })
 
@@ -44,7 +45,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
   desc = "Open Neotree automatically",
   group = "neotree",
   callback = function()
-    local stats = vim.loop.fs_stat(vim.api.nvim_buf_get_name(0))
+    local stats = vim.uv.fs_stat(vim.api.nvim_buf_get_name(0))
     if stats and stats.type == "directory" then
       require("neo-tree.setup.netrw").hijack()
     end
