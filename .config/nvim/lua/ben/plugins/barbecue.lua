@@ -1,7 +1,9 @@
 -- provides a vscode-like navigation bar at the top
+-- seems to be no longer maintained
 return {
   "utilyre/barbecue.nvim",
   name = "barbecue",
+  enabled = false,
   version = "*",
   dependencies = {
     "SmiteshP/nvim-navic",
