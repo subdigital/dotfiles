@@ -9,16 +9,16 @@
 {
   "agent": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4"
+      "provider": "openai",
+      "model": "o3"
     },
     "version": "2"
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "zed"
   },
   "base_keymap": "VSCode",
-  "theme": "Ayu Dark",
+  "theme": "JetBrains New Dark",
   "buffer_font_size": 13,
   "buffer_font_family": "Iosevka Nerd Font Mono",
   "vim_mode": true,
