@@ -6,14 +6,15 @@ local km = vim.keymap
 km.set("n", "<c-n>", "<cmd>nohl<cr>", { silent = true, noremap = true })
 
 -- window navigation
-km.set("n", "<c-l>", "<c-w>l")
-km.set("n", "<c-h>", "<c-w>h")
-km.set("n", "<c-k>", "<c-w>k")
-km.set("n", "<c-j>", "<c-w>j")
+km.set("n", "<c-l>", "<c-w>l", { noremap = true, silent = true })
+km.set("n", "<c-h>", "<c-w>h", { noremap = true, silent = true })
+km.set("n", "<c-k>", "<c-w>k", { noremap = true, silent = true })
+km.set("n", "<c-j>", "<c-w>j", { noremap = true, silent = true })
+
 
 -- tab navigation
-km.set("n", "<s-l>", "<cmd>tabn<cr>")
-km.set("n", "<s-h>", "<cmd>tabp<cr>")
+km.set("n", "<s-l>", "<cmd>tabn<cr>", { noremap = true, silent = true })
+km.set("n", "<s-h>", "<cmd>tabp<cr>", { noremap = true, silent = true })
 
 -- quick open config
 --
@@ -63,12 +64,12 @@ km.set("v", "<", "<gv", { silent = true, noremap = true })
 --
 
 M = {}
-function M.open_file_in_another_window()
+function M.open_file_new_window()
   -- get the file under the cursor
   local cur_file = vim.fn.expand("<cfile>")
 
   -- save the current window id
-  local cur_win = vim.api.nvim_get_current_win()
+  -- local cur_win = vim.api.nvim_get_current_win()
 
   -- switch to the previous window
   vim.api.nvim_command("wincmd p")
@@ -78,4 +79,4 @@ function M.open_file_in_another_window()
   -- vim.api.nvim_set_current_win(cur_win)
 end
 
-km.set("n", "<F8>", [[:lua M.open_file_in_another_window()<cr>]], { silent = true, noremap = true })
+km.set("n", "<F8>", [[:lua M.open_file_new_window()<cr>]], { silent = true, noremap = true })
