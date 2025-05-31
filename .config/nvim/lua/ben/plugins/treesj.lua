@@ -1,7 +1,8 @@
 return {
   -- plugin for splitting/joining blocks
   "Wansmer/treesj",
-  keys = { "<c-m>", "<c-j>" },
+  enabled = false,
+  -- keys = { "<c-m>", "<c-j>" },
   config = function()
     local lang_utils = require("treesj.langs.utils")
 
@@ -49,6 +50,7 @@ return {
     }
 
     require("treesj").setup({
+      use_default_keymaps = false,
       langs = {
         swift = swift_config,
       },
