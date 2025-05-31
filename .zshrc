@@ -1,5 +1,4 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/opt/homebrew/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.mint/bin:$PATH
@@ -9,6 +8,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# homebrew
+eval $(/opt/homebrew/bin/brew shellenv)
 
 ZSH_THEME="gozilla"
 
