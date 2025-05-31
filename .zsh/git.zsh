@@ -3,9 +3,11 @@ alias gd="git diff"
 alias gcb="git checkout -b"
 alias gb="git branch --column --sort=-committerdate"
 alias grc="git rebase --continue"
-alias gc="git commit"
+alias gc="git commit --verbose"
 alias gca="git commit -v -a"
-alias gl="git log --oneline"
+alias gl='git log --graph --all --pretty=format:"%C(magenta)%h %C(white) %an  %ar%C(blue)  %D%n%s%n"'
+alias glo="git log --oneline"
+alias ga="git add"
 
 # remove zsh git plugin gco and use our own
 unalias gco 2>/dev/null
