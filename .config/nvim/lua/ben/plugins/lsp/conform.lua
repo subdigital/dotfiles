@@ -25,7 +25,7 @@ return {
       },
 
       format_on_save = function(bufnr)
-        if vim.g.disable_autoformat then
+        if vim.bo[bufnr].filetype == "swift" or vim.g.disable_autoformat then
           return
         end
         return {
@@ -35,14 +35,14 @@ return {
       end,
     })
 
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      pattern = "*",
-      callback = function(args)
-        if vim.g.disable_autoformat then
-          return
-        end
-        require("conform").format({ bufnr = args.buf })
-      end,
-    })
+    -- vim.api.nvim_create_autocmd("BufWritePre", {
+    --   pattern = "*",
+    --   callback = function(args)
+    --     if vim.g.disable_autoformat then
+    --       return
+    --     end
+    --     require("conform").format({ bufnr = args.buf })
+    --   end,
+    -- })
   end,
 }
