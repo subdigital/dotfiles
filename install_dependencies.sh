@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -eoupipefail
 
 # This will install dependencies used by these dotfiles. Assumes homebrew is installed.
 
@@ -21,12 +21,20 @@ install_package fzf
 install_package wget
 install_package gh
 install_package hub
-install_cask_package wezterm
 install_package starship
 install_package zoxide
 install_package lazygit
 install_package zsh-autosuggestions
 install_package zsh-syntax-highlighting
+
+install_cask_package wezterm
+install_cask_package raycast
+install_cask_package xcodes
+
+# oh-my-zsh and plugins
+echo "📦 Installing oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 # Install yazi and plugins
 install_package yazi

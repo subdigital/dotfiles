@@ -1,5 +1,7 @@
 [plugin]
 deps = []
 
-[flavor]
-deps = [{ use = "tkapias/moonfly", rev = "395c686" }]
+[[flavor.deps]]
+use = "tkapias/moonfly"
+rev = "395c686"
+hash = "f1c75db953010661073c665c237c5722"
