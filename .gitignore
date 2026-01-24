@@ -4,6 +4,7 @@
 .vim/_temp
 .vim/.netrwhist
 .config/iterm2
+*.bak
 
 .zsh/local/APHCJ7JF80FEFA.zsh
 .zsh/local/APT62MH547C086.zsh
@@ -28,6 +29,7 @@
 
 # 1Password
 .config/op
+
 
 # Remove most of Zed's runtime files, leave config
 .config/zed/embeddings

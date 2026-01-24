@@ -8,22 +8,12 @@
 // from the command palette or from `Zed` application menu.
 {
   "agent": {
-    "profiles": {
-      "minimal": {
-        "name": "Minimal",
-        "tools": {
-          "grep": true
-        },
-        "enable_all_context_servers": false,
-        "context_servers": {}
-      }
-    },
-    "always_allow_tool_actions": true,
-    "default_profile": "write",
+    "default_profile": "ask",
     "default_model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-5-latest"
     },
+    "version": "2"
   },
   "features": {
     "edit_prediction_provider": "zed"

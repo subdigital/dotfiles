@@ -1,5 +1,6 @@
 {
     "diagnostics.globals": [
-        "swift_lsp_setup"
+        "swift_lsp_setup",
+        "vim"
     ]
 }

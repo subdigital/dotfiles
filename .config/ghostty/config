@@ -6,10 +6,7 @@ font-size = 18
 background-opacity = 0.9
 unfocused-split-opacity = 0.5
 background-blur-radius = 20
+macos-option-as-alt = true
 
-# this makes tabs open in a new window, removing for now
-# macos-titlebar-style = hidden
-
-keybind = global:ctrl+grave_accent=toggle_quick_terminal
-
+macos-titlebar-style = tabs
 scrollback-limit = 104857600

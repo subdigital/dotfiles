@@ -1,6 +1,6 @@
 return {
   "echasnovski/mini.pairs",
-  enabled = true,
+  enabled = false,
   config = function()
     require("mini.pairs").setup()
   end

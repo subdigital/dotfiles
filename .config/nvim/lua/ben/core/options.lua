@@ -33,20 +33,20 @@ opt.splitbelow = true
 opt.swapfile = false
 
 -- disable commandline until it is used
-vim.opt.cmdheight = 0
+opt.cmdheight = 0
 
 -- preserve undo across sessions
-vim.opt.undofile = true
+opt.undofile = true
 
 -- show whitespace chars
-vim.opt.list = true
-vim.opt.listchars = { tab = "≫ ", trail = "･", nbsp = "␣" }
+opt.list = true
+opt.listchars = { tab = "≫ ", trail = "･", nbsp = "␣" }
 
 -- preview substitutions as you type
-vim.opt.incsearch = true
+opt.incsearch = true
 
 -- don't show the mode, it's already visible in the status line
 -- vim.opt.showmode = false
 
 -- start scrolling earlier
-vim.opt.scrolloff = 10
+opt.scrolloff = 10

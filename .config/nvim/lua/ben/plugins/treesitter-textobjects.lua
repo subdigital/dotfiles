@@ -3,6 +3,7 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },
+  enabled = false,
   init = function()
     local config = require("nvim-treesitter.configs")
     local opts = {
