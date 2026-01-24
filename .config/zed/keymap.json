@@ -10,6 +10,8 @@
     "context": "Workspace",
     "bindings": {
       // "shift shift": "file_finder::Toggle"
+      "alt-b": ["task::Spawn", { "task_name": "Build" }],
+      "alt-r": ["task::Spawn", { "task_name": "Run" }]
     }
   },
   {
@@ -18,10 +20,10 @@
       // "j k": ["workspace::SendKeystrokes", "escape"]
       "cmd-k cmd-s": "zed::OpenKeymap",
       "ctrl-\\": "workspace::ToggleBottomDock", // or :ToggleFocus?
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown"
     }
   },
   {
