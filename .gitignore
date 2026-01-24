@@ -8,6 +8,9 @@
 
 .zsh/local/APHCJ7JF80FEFA.zsh
 .zsh/local/APT62MH547C086.zsh
+.zsh/local/artemis.zsh
+.zsh/local/icarus.zsh
+.zsh/local/aether.zsh
 
 # Some tools put secrets/runtime stuff into .config
 .config/github_copilot

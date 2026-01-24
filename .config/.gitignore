@@ -4,5 +4,6 @@ github-copilot
 stripe
 1Password
 qmk
-swiftpm
 tuist
+op
+.swiftpm
