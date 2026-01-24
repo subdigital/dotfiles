@@ -5,10 +5,11 @@ return {
     "hrsh7th/cmp-nvim-lsp",
   },
   config = function()
-    local lspconfig = require("lspconfig")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local keymap = vim.keymap
     local opts = { noremap = true, silent = true }
+
+    ---@diagnostic disable-next-line: unused-local
     local on_attach = function(client, bufnr)
       -- opts.bufnr = bufnr
 
@@ -17,10 +18,10 @@ return {
       keymap.set("n", "gR", "<cmd>Telescope lsp_references<cr>", opts)
 
       opts.desc = "Go to declaration"
-      keymap.set("n", "gd", vim.lsp.buf.declaration, opts)
+      keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 
       opts.desc = "Show LSP definitions"
-      keymap.set("n", "gD", "<cmd>Telescope lsp_definitions<cr>", opts)
+      keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<cr>", opts)
 
       opts.desc = "Show LSP implementations"
       keymap.set("n", "gI", "<cmd>Telescope lsp_implementations<cr>", opts)
@@ -63,21 +64,18 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    -- configure the language servers
-    lspconfig["html"].setup({
+    -- defaults for a language servers
+    vim.lsp.config("*", {
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = on_attach
+    })
+
+    -- configure the language servers
+    vim.lsp.config("html", {
       filetypes = { "html", "html.erb" },
     })
 
-    lspconfig["ts_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["lua_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
+    vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
           -- make lua_ls recognize the vim global variable
@@ -95,77 +93,25 @@ return {
       },
     })
 
-    -- lspconfig["solargraph"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = on_attach
-    -- })
-
-    lspconfig["ruby_lsp"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      cmd = { "mise", "x", "--", "ruby-lsp" },
-      init_options = {
-        formatters = { "standard" },
-        linters = { "standard" },
-      },
+    vim.lsp.config("clangd", {
+      settings = {
+        cmd = {
+          "clangd",
+          "--background-index",
+          "--pch-storage=memory",
+          "--all-scopes-completion",
+          "--pretty",
+          "--header-insertion=never",
+          "-j=4",
+          "--inlay-hints",
+          "--header-insertion-decorators",
+          "--function-arg-placeholders",
+          "--completion-style=detailed",
+        },
+        filetypes = { "c", "cpp", "objc", "objcpp" },
+        root_markers = { "src" },
+        single_file_support = true,
+      }
     })
-
-    lspconfig["standardrb"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      cmd = { "mise", "x", "--", "standardrb", "--lsp" },
-    })
-
-    lspconfig["sourcekit"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["svelte"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["tailwindcss"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["zls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["gopls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-
-    lspconfig["clangd"].setup({
-      cmd = {
-        "clangd",
-        "--background-index",
-        "--pch-storage=memory",
-        "--all-scopes-completion",
-        "--pretty",
-        "--header-insertion=never",
-        "-j=4",
-        "--inlay-hints",
-        "--header-insertion-decorators",
-        "--function-arg-placeholders",
-        "--completion-style=detailed",
-      },
-      filetypes = { "c", "cpp", "objc", "objcpp" },
-      root_dir = lspconfig.util.root_pattern("src"),
-      -- init_options = { fallbackFlags = { "-std=c++2a" } },
-      capabilities = capabilities,
-      single_file_support = true,
-    })
-
-    -- lspconfig["rust_analyzer"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = on_attach
-    --
-    -- })
   end,
 }

@@ -9,12 +9,6 @@ return {
   { "hrsh7th/cmp-vsnip" },
   {
     "neovim/nvim-lspconfig",
-    init = function()
-      -- local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      --
-      -- -- change a keymap
-      -- keys[#keys + 1] = { "K", "<cmd>echo 'hello'<CR>" }
-    end,
     setup = function()
       local lspconfig = require("lspconfig")
       local lsp = require("lsp")

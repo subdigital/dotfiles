@@ -14,3 +14,4 @@ vim.opt.rtp:prepend(lazypath)
 
 require("ben.core")
 require("ben.lazy")
+require("ben.lsp")

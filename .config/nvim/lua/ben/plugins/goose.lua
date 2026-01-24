@@ -14,7 +14,8 @@ return {
       default_global_keymaps = false,
       keymap = {
         global = {
-          toggle = "<leader>CC",
+          --toggle = "<leader>CC",
+          toggle = "<D-A>",
           open_input = "<leader>CI",
           open_output = "<leader>CO",
         },
