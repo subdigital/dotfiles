@@ -1,1 +1,3 @@
-{}
+CLAUDE_CODE_COMMAND: claude
+GOOSE_PROVIDER: claude-code
+GOOSE_MODEL: claude-sonnet-4-5-20250929
