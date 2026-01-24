@@ -1,12 +1,30 @@
-# theme = Ayu Mirage
+### THEME
+theme = Ayu Mirage
 # theme = carbonfox
-theme = AlienBlood
-font-family = Iosevka Nerd Font Mono
-font-size = 18
-background-opacity = 0.9
-unfocused-split-opacity = 0.5
-background-blur-radius = 20
-macos-option-as-alt = true
+# theme = Alien Blood
 
+
+### FONT
+# font-family = Iosevka Nerd Font Mono
+font-family = JetBrainsMono Nerd Font
+font-size = 14
+adjust-cell-width = -2
+
+
+### BACKGROUND
+background-opacity = 0.8
+unfocused-split-opacity = 0.5
+background-blur-radius = 10
+
+
+### MACOS
+macos-option-as-alt = true
 macos-titlebar-style = tabs
+
+
+### TERM
 scrollback-limit = 104857600
+
+
+### KEYBINDS
+keybind = shift+enter=text:\n
