@@ -33,6 +33,9 @@
 # 1Password
 .config/op
 
+# swiftpm
+.config/.swiftpm
+.config/swiftpm
 
 # Remove most of Zed's runtime files, leave config
 .config/zed/embeddings
