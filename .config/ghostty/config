@@ -8,11 +8,11 @@ theme = Ayu Mirage
 # font-family = Iosevka Nerd Font Mono
 font-family = JetBrainsMono Nerd Font
 font-size = 14
-adjust-cell-width = -2
+adjust-cell-width = -3
 
 
 ### BACKGROUND
-background-opacity = 0.8
+background-opacity = 0.9
 unfocused-split-opacity = 0.5
 background-blur-radius = 10
 
@@ -28,3 +28,5 @@ scrollback-limit = 104857600
 
 ### KEYBINDS
 keybind = shift+enter=text:\n
+keybind = super+r=unbind 
+keybind = super+b=unbind 

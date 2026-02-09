@@ -5,42 +5,42 @@
 -- ... this file is filled with pain
 
 return {
-  {
-    lazy = false,
-    priority = 1000,
-    "folke/tokyonight.nvim",
-    config = function(opts)
-      -- hijack this plugin's config function to set the desired theme
-      vim.cmd.colorscheme "catppuccin"
-    end,
-  },
-  "rktjmp/lush.nvim",
-  "craftzdog/solarized-osaka.nvim",
-  { "rose-pine/neovim", name = "rose-pine" },
-  "eldritch-theme/eldritch.nvim",
-  "jesseleite/nvim-noirbuddy",
-  "miikanissi/modus-themes.nvim",
-  "rebelot/kanagawa.nvim",
-  "rockyzhang24/arctic.nvim",
-  "Shatur/neovim-ayu",
-  "RRethy/base16-nvim",
-  "xero/miasma.nvim",
-  "cocopon/iceberg.vim",
-  "kepano/flexoki-neovim",
-  "ntk148v/komau.vim",
-  { "catppuccin/nvim",  name = "catppuccin", opts = { transparent_background = true } },
-  "uloco/bluloco.nvim",
-  "LuRsT/austere.vim",
-  "ricardoraposo/gruvbox-minor.nvim",
-  "NTBBloodbath/sweetie.nvim",
-  { "rose-pine/neovim", name = "rose-pine" },
-  {
-    "maxmx03/fluoromachine.nvim",
-    -- config = function()
-    --   local fm = require "fluoromachine"
-    --   fm.setup { glow = true, theme = "fluoromachine" }
-    -- end,
-  },
+    {
+        lazy = false,
+        priority = 1000,
+        "folke/tokyonight.nvim",
+        config = function(opts)
+            -- hijack this plugin's config function to set the desired theme
+            vim.cmd.colorscheme "catppuccin"
+        end,
+    },
+    "rktjmp/lush.nvim",
+    "craftzdog/solarized-osaka.nvim",
+    { "rose-pine/neovim", name = "rose-pine" },
+    "eldritch-theme/eldritch.nvim",
+    "jesseleite/nvim-noirbuddy",
+    "miikanissi/modus-themes.nvim",
+    "rebelot/kanagawa.nvim",
+    "rockyzhang24/arctic.nvim",
+    "Shatur/neovim-ayu",
+    "RRethy/base16-nvim",
+    "xero/miasma.nvim",
+    "cocopon/iceberg.vim",
+    "kepano/flexoki-neovim",
+    "ntk148v/komau.vim",
+    { "catppuccin/nvim",  name = "catppuccin", opts = { transparent_background = false } },
+    "uloco/bluloco.nvim",
+    "LuRsT/austere.vim",
+    "ricardoraposo/gruvbox-minor.nvim",
+    "NTBBloodbath/sweetie.nvim",
+    { "rose-pine/neovim", name = "rose-pine" },
+    {
+        "maxmx03/fluoromachine.nvim",
+        -- config = function()
+        --   local fm = require "fluoromachine"
+        --   fm.setup { glow = true, theme = "fluoromachine" }
+        -- end,
+    },
 }
 
 -- Theme definitions: plugin spec + colorscheme command

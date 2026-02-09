@@ -41,3 +41,4 @@
 .config/zed/.tmp*
 .config/zed/conversations/
 .config/zed/prompts/
+.config/swiftpm
