@@ -7,11 +7,33 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "cli_default_open_behavior": "existing_window",
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
   "terminal": {
     "dock": "right"
   },
   "icon_theme": "Modern Icons (Light)",
   "agent": {
+    "dock": "left",
     "inline_assistant_model": {
       "provider": "anthropic",
       "model": "claude-4-sonnet-latest"
@@ -20,6 +42,10 @@
     "default_model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-latest"
+    },
+    "commit_message_model": {
+      "provider": "anthropic",
+      "model": "claude-3-5-haiku"
     }
   },
   "features": {
@@ -36,17 +62,8 @@
   },
 
   "ui_font_family": ".SystemUIFont",
+  // "ui_font_family": "Iosevka Nerd Font Mono",
   "ui_font_size": 14,
-  "inlayHints": {
-    "maxLength": null,
-    "lifetimeElisionHints": {
-      "useParameterNames": true,
-      "enable": "skip_trivial"
-    },
-    "closureReturnTypeHints": {
-      "enable": "always"
-    }
-  },
 
   "file_types": {
     "Ruby": ["Podfile", "Gemfile", "Fastfile*", "Dangerfile*"],
@@ -59,25 +76,25 @@
     },
     "Swift": {
       "format_on_save": "off"
+    },
+    "Odin": {
+      "language_servers": ["ols"]
     }
   },
 
   "lsp": {
-    "ruby-lsp": {
-      "binary": {
-        "command": "mise x -- ruby-lsp"
-      },
-      "initialization_options": {}
+    "ols": {
+      "initialization_options": {
+        "enable_hover": true,
+        "enable_snippets": true,
+        "enable_procedure_snippet": true,
+        "enable_semantic_tokens": true,
+        "enable_inlay_hints": true,
+        "enable_references": true,
+        "enable_document_symbols": true,
+        "enable_format": true
+      }
     }
   },
-  "context_servers": {
-    "linear": {
-      "command": {
-        "path": "npx",
-        "args": ["-y", "mcp-remote", "https://mcp.linear.app/sse"],
-        "env": {}
-      },
-      "settings": {}
-    }
-  }
+  "context_servers": {}
 }

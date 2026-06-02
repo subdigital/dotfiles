@@ -1,6 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  enabled = false,
+  branch = "main",
+  enabled = true,
   opts = {
     ensure_installed = {
       "bash",
@@ -23,8 +24,11 @@ return {
       "zig",
     },
     indent = {
-      -- enabled = true
       enabled = false,
+    },
+    autotag = {
+      enabled = true,
+      enable_close_on_slash = true
     },
     highlight = {
       enable = true,
@@ -46,7 +50,7 @@ return {
     },
   },
   config = function(_, opts)
-    require("nvim-treesitter.configs").setup(opts)
+    require("nvim-treesitter").setup(opts)
 
     -- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
   end,

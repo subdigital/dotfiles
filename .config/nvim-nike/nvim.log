@@ -1,0 +1,2 @@
+WRN 2026-04-21T13:45:21.956 ?.41614    server_start:197: Failed to start server: operation not permitted: /var/folders/zg/fr2mvf7d4vq3n6yk37r02kxw0000gp/T/nvim.bsch31/cb634w/nvim.41614.0
+WRN 2026-04-21T13:45:22.055 ?.41616    server_start:197: Failed to start server: operation not permitted: /var/folders/zg/fr2mvf7d4vq3n6yk37r02kxw0000gp/T/nvim.bsch31/2yTpgJ/nvim.41616.0

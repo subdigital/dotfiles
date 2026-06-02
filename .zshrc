@@ -46,3 +46,9 @@ bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ben/.lmstudio/bin"
+# End of LM Studio CLI section
+
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"

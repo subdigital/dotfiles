@@ -5,6 +5,7 @@ command_timeout = 2000 # 1 second
 format = """
 [](color_orange)\
 $os\
+$hostname\
 $username\
 [](bg:color_yellow fg:color_orange)\
 $directory\
@@ -37,6 +38,12 @@ color_yellow = '#d79921'
 [os]
 disabled = false
 style = "bg:color_orange fg:color_fg0"
+
+[hostname]
+ssh_only = true
+format = "[ $hostname ]($style)"
+style = "bg:color_aqua fg:color_fg0"
+
 
 [os.symbols]
 Windows = "󰍲"

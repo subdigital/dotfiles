@@ -36,7 +36,7 @@ return {
       keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
       opts.desc = "Show buffer diagnostics"
-      keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<cr>", opts)
+      keymap.set("n", "<leader>db", "<cmd>Telescope diagnostics bufnr=0<cr>", opts)
 
       opts.desc = "Show line diagnostics"
       keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
@@ -78,17 +78,9 @@ return {
     vim.lsp.config("lua_ls", {
       settings = {
         Lua = {
-          -- make lua_ls recognize the vim global variable
-          diagnostics = {
-            globals = { "vim" },
-          },
-          workspace = {
-            -- make the library aware of runtime files
-            library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config")] = true,
-            },
-          },
+          runtime = {
+            version = "LuaJIT",
+          }
         },
       },
     })

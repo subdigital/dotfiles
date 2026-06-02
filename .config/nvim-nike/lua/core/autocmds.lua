@@ -4,8 +4,7 @@
 
 -- set ruby filetypes for ruby files that don't have an extension
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-  pattern =
-  "Dangerfile,Podfile,Gemfile,Fastfile*,Appfile,Vagrantfile,Thorfile,config.ru,*.podspec,Guardfile,Capfile,*.cap,*.rabl,",
+  pattern = "Dangerfile,Podfile,Gemfile,Fastfile*,Appfile,Vagrantfile,Thorfile,config.ru,*.podspec,Guardfile,Capfile,*.cap,*.rabl,",
   callback = function()
     local buf = vim.api.nvim_get_current_buf()
     vim.api.nvim_set_option_value("filetype", "ruby", { buf = buf })
@@ -17,7 +16,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "BUILD.*",
   callback = function()
     local buf = vim.api.nvim_get_current_buf()
-    vim.api.nvim_set_option_value("filetype", "bzl", { buf = buf })
+    vim.api.nvim_set_option_value("filetype", "bzl", {buf = buf})
   end,
 })
 
@@ -26,7 +25,7 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   pattern = "build.zig",
   callback = function()
     local buf = vim.api.nvim_get_current_buf()
-    vim.api.nvim_set_option_value("filetype", "zig", { buf = buf })
+    vim.api.nvim_set_option_value("filetype", "zig", {buf = buf})
   end,
 })
 
@@ -39,18 +38,27 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
   end,
 })
 
--- open neotree automatically if you specify a folder
-vim.api.nvim_create_augroup("neotree", {})
-vim.api.nvim_create_autocmd("VimEnter", {
-  desc = "Open Neotree automatically",
-  group = "neotree",
+-- xcconfig files
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "*.xcconfig",
   callback = function()
-    local stats = vim.uv.fs_stat(vim.api.nvim_buf_get_name(0))
-    if stats and stats.type == "directory" then
-      require("neo-tree.setup.netrw").hijack()
-    end
+    local buf = vim.api.nvim_get_current_buf()
+    vim.api.nvim_set_option_value("filetype", "c", { buf = buf })
   end,
 })
+
+-- open neotree automatically if you specify a folder
+-- vim.api.nvim_create_augroup("neotree", {})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   desc = "Open Neotree automatically",
+--   group = "neotree",
+--   callback = function()
+--     local stats = vim.loop.fs_stat(vim.api.nvim_buf_get_name(0))
+--     if stats and stats.type == "directory" then
+--       require("neo-tree.setup.netrw").hijack()
+--     end
+--   end,
+-- })
 
 -- automatically reload files when they change
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
@@ -62,13 +70,4 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHo
 vim.api.nvim_create_autocmd({ "FileChangedShellPost" }, {
   pattern = "*",
   command = "echohl WarningMsg | echo 'File changed on disk. Buffer reloaded.' | echohl None",
-})
-
--- set goose output to wrap by default
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "GooseOutput",
-  callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.linebreak = true -- wraps at word boundaries instead of mid character
-  end
 })

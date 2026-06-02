@@ -1,14 +1,15 @@
 ### THEME
-theme = Ayu Mirage
-# theme = carbonfox
+# theme = Ayu Mirage
+theme = carbonfox
 # theme = Alien Blood
-
+# theme = Gruvbox Dark Hard
 
 ### FONT
-# font-family = Iosevka Nerd Font Mono
-font-family = JetBrainsMono Nerd Font
-font-size = 14
-adjust-cell-width = -3
+font-family = Iosevka Nerd Font Mono
+# font-family = JetBrainsMono Nerd Font
+font-size = 16
+adjust-cell-height = 10%
+adjust-cell-width = 0
 
 
 ### BACKGROUND
@@ -28,5 +29,8 @@ scrollback-limit = 104857600
 
 ### KEYBINDS
 keybind = shift+enter=text:\n
+
+# unmap key binds for vim
 keybind = super+r=unbind 
 keybind = super+b=unbind 
+keybind = super+P=unbind
